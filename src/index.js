@@ -1,5 +1,5 @@
-import "../stylesheets/css/main.css"
-import { pubsub } from './pubsub'
+import "./stylesheets/css/main.css"
+import { pubsub } from './modules'
 
 // test implementation
 let eventHandler = pubsub()
@@ -8,5 +8,5 @@ eventHandler.publish("logData", "the data")
 subscription.unsubscribe()
 
 function logData(data) {
-  console.log(data)
+  console.log(data) 
 }
