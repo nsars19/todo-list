@@ -10,7 +10,7 @@ export const pubsub = () => {
       index = subscribers[event].push(callback) - 1
 
       return {
-        unload() {
+        unsubscribe() {
           subscribers[event].splice(index, 1)
         }
       }
