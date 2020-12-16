@@ -1,3 +1,6 @@
-export const project = () => {
-  
+export const project = (info) => {
+  return {
+    title: info["title"] || "",
+    todos: info["todos"] || [],
+  }
 }
