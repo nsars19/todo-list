@@ -3,13 +3,16 @@
 header {
   user-select: none;
   background: rgb(35, 36, 61);
-  font-family: 'Righteous', cursive;
   padding: 10px 20px;
   font-size: 1.6em;
   display: grid;
   align-items: center;
   grid-auto-flow: column;
 
+  .title h1 {
+    font-family: 'Righteous', cursive;
+  }
+  
   .nav {
     display: none;
   }
