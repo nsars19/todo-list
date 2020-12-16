@@ -19,9 +19,13 @@ export const pubsub = () => {
   const publish = (event, data) => {
     if (!subscribers[event]) { return }
 
+    let callbackReturns = []
+    
     subscribers[event].forEach(callback => {
-      callback(data)
+      callbackReturns.push(callback(data))
     })
+
+    return callbackReturns
   }
 
   return {
