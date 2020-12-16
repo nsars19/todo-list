@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npx webpack --watch",
-    "sass": "sass --watch src/stylesheets/scss/:src/stylesheets/css/"
+    "sass": "sass --watch src/stylesheets/scss/:src/stylesheets/css/",
+    "dev:start": "npx webpack --watch & sass --watch src/stylesheets/scss/:src/stylesheets/css/"
   },
   "author": "",
   "license": "ISC",
