@@ -1,6 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap");
+header {
+  user-select: none;
+  background: #23243d;
+  font-family: "Righteous", cursive;
+  padding: 10px 20px;
+  font-size: 1.6em;
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+}
+header .nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  header {
+    font-size: 1em;
+  }
+  header .nav,
+header .nav-selected {
+    width: 30px;
+    height: 27px;
+    display: inline-block;
+    justify-self: end;
+    display: grid;
+    place-items: center;
+    transition: all 2.5s ease-in;
+  }
+  header .nav > *,
+header .nav-selected > * {
+    height: 4px;
+    width: 25px;
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: white;
+  }
+  header .nav-selected {
+    position: relative;
+    translate: all 0.2s transform;
+  }
+  header .nav-selected #bar1 {
+    position: absolute;
+    transform: rotate(-0.125turn);
+  }
+  header .nav-selected #bar2 {
+    display: none;
+  }
+  header .nav-selected #bar3 {
+    position: absolute;
+    transform: rotate(0.125turn);
+  }
+}
+
+.sidebar {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  height: calc(100vh - 93px);
+}
+@media (max-width: 768px) {
+  .sidebar {
+    height: calc(100vh - 66px);
+  }
+}
+
+@media (max-width: 768px) {
+  [data-sidebar-active=true] {
+    transition: all 0.1s ease;
+    width: 250px;
+    background-color: #08080e;
+  }
+
+  [data-sidebar-active=false] {
+    transition: all 0.3s ease;
+    width: 0;
+    border: none;
+  }
+}
+@media (max-width: 400px) {
+  [data-sidebar-active=true] {
+    width: 100vw;
+  }
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
 body {
-  color: white;
-  background: black;
+  color: #eee;
+  background: #1c1c22;
+  position: relative;
+}
+
+.d-none {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

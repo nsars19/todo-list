@@ -1,4 +1,23 @@
+@use './partials/header';
+@use './partials/sidebar';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
 body {
-  color: white;
-  background: black;
+  color: #eee;
+  background: rgb(28, 28, 34);
+  position: relative;
+}
+
+.d-none {
+  display: none;
 }

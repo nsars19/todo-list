@@ -1,0 +1,29 @@
+.sidebar {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  height: calc(100vh - 93px);
+
+  @media (max-width: 768px) {
+    height: calc(100vh - 66px);
+  }
+
+}
+
+@media (max-width: 768px) {
+  [data-sidebar-active="true"] {
+    transition: all 0.1s ease;
+    width: 250px;
+    background-color: rgb(8, 8, 14);
+  }
+  [data-sidebar-active="false"] {
+    transition: all 0.3s ease;
+    width: 0;
+    border: none;
+  }
+}
+@media (max-width: 400px) {
+  [data-sidebar-active="true"] {
+    width: 100vw;
+  }
+}
