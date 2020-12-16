@@ -9,6 +9,11 @@ export const DOM = () => {
     }
     return elem
   }
+  const addAttr = (elem, attr) => elem.addAttribute(attr)
+
+  const toggleAttr = (elem, attr) => {
+    elem.getAttribute(attr) == "true" ? elem.setAttribute(attr, false) : elem.setAttribute(attr, true)
+  }
 
   const createWith = (elem, attrs) => {
     let element = create(elem)
@@ -30,6 +35,8 @@ export const DOM = () => {
     $,
     create,
     addAttributes,
+    addAttr,
+    toggleAttr,
     createWith,
     addClass,
     removeClass,
