@@ -121,6 +121,54 @@ header .nav-selected > * {
   position: relative;
 }
 
+.project-focused {
+  display: grid;
+  margin: 30px;
+  width: 72.5%;
+}
+.project-focused .title {
+  padding-bottom: 20px;
+  font-size: 2.1em;
+}
+.project-focused .todos {
+  display: grid;
+}
+
+.todo {
+  padding-left: 8px;
+  position: relative;
+}
+.todo .title {
+  font-size: 1.2em;
+}
+.todo .todo-notes {
+  transition: all 0.1s ease;
+}
+
+[data-note-active=true] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 20vh;
+  min-width: 300px;
+  width: 70%;
+  background: #25252c;
+  z-index: 100;
+  border-radius: 8px;
+}
+[data-note-active=true] > * {
+  padding: 8px;
+  padding-left: 15px;
+}
+
+[data-note-active=false] {
+  height: 0;
+  width: 0;
+}
+[data-note-active=false] > * {
+  display: none;
+}
+
 *,
 ::before,
 ::after {
