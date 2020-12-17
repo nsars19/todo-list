@@ -2,13 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap");
 header {
   user-select: none;
-  background: #23243d;
-  font-family: "Righteous", cursive;
+  background: #1d1e2f;
   padding: 10px 20px;
   font-size: 1.6em;
   display: grid;
   align-items: center;
   grid-auto-flow: column;
+}
+header .title h1 {
+  font-family: "Righteous", cursive;
 }
 header .nav {
   display: none;
@@ -56,39 +58,76 @@ header .nav-selected > * {
   position: absolute;
   right: 0;
   z-index: 999;
-  height: calc(100vh - 93px);
+  height: calc(100vh - 85px);
+  width: 35%;
+  max-width: 350px;
+  border-left: 2px solid #333;
+  background-color: #25252c;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 @media (max-width: 768px) {
   .sidebar {
-    height: calc(100vh - 66px);
+    height: calc(100vh - 61px);
   }
+}
+.sidebar .new-project:hover,
+.sidebar .projects > *:hover {
+  background: #dbdbdb1a;
+}
+.sidebar .new-project:active,
+.sidebar .projects > *:active {
+  background: #dbdbdb1a;
+}
+.sidebar .new-project:active .project-title,
+.sidebar .new-project:active h2,
+.sidebar .projects > *:active .project-title,
+.sidebar .projects > *:active h2 {
+  text-shadow: none;
 }
 
 @media (max-width: 768px) {
   [data-sidebar-active=true] {
-    transition: all 0.1s ease;
-    width: 250px;
-    background-color: #08080e;
+    width: 300px;
+    background-color: #25252c;
   }
 
   [data-sidebar-active=false] {
-    transition: all 0.3s ease;
-    width: 0;
-    border: none;
+    display: none;
   }
 }
 @media (max-width: 400px) {
   [data-sidebar-active=true] {
-    width: 100vw;
+    min-width: 100vw;
   }
 }
+.new-project {
+  padding: 15px;
+  font-size: 1em;
+  text-shadow: 1px 1px 3px #000;
+}
+.new-project .icon {
+  font-size: 1.2em;
+}
+
+.projects {
+  display: grid;
+  text-shadow: 1px 1px 3px #000;
+}
+.projects .project {
+  padding: 10px 40px 10px 15px;
+  position: relative;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-family: "M PLUS Rounded 1c", Courier, sans-serif;
 }
 
 body {
