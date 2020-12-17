@@ -1,0 +1,31 @@
+.todo {
+  padding-left: 8px;
+  position: relative;
+
+  .title { font-size: 1.2em; }
+  .todo-notes {
+    transition: all 0.1s ease;
+  }
+}
+
+[data-note-active="true"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 20vh;
+  min-width: 300px;
+  width: 70%;
+  background: #25252c;
+  z-index: 100;
+  border-radius: 8px;
+
+  & > * {
+    padding: 8px;
+    padding-left: 15px;
+  }
+}
+[data-note-active="false"] {
+  height: 0;
+  width: 0;
+  & > * { display: none;}
+}
