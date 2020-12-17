@@ -1,0 +1,14 @@
+.project-focused {
+  display: grid;
+  margin: 30px;
+
+  .title {
+    padding-bottom: 20px;
+    font-size: 2.1em;
+  }
+
+  .todos {
+    display: grid;
+    gap: 6px;
+  }
+}
