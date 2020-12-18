@@ -25,11 +25,16 @@ function toggleSidebar() {
   dom.toggleAttr(sidebar, "data-sidebar-active")
 }
 
+function toggleNotes() {
+  let notes = dom.$('.todo-desc')
+  dom.toggleAttr(notes, "data-note-active")
+}
+
 let testTodo = todo({
+  todoTitle: "make a title",
   description: "a descriptor",
   dueDate: "12/25/2020",
   priority: "high",
-  notes: ["super important", "make sure it's done well!"]
 })
 let testTodo2 = todo({
   description: "another todo",
@@ -37,22 +42,36 @@ let testTodo2 = todo({
   priority: "low",
   notes: ["get to it eventually", "don't spend too much time on this one"]
 })
-
+let testTodo3 = todo({
+  description: "get cheese ingredients",
+  dueDate: "12/11/2020",
+  priority: "low",
+})
+let testTodo4 = todo({
+  description: "eatCHEESE and then get app running",
+  dueDate: "12/12/2020",
+  priority: "low",
+})
 const createTodo = eventHandler.subscribe("createTodo", todo)
-let todos = [
-  eventHandler.publish("createTodo", testTodo),
-  eventHandler.publish("createTodo", testTodo2)
+
+let project1 = project({
+  projectTitle: "Make some cheese",
+  todos: [testTodo3, testTodo4]
+})
+let project2 = project({
+  projectTitle: "Something else!",
+  todos: [testTodo, testTodo2]
+})
+
+let projects = [
+  {obj: project1, elem: dom.printProjectToSidebar(project1)},
+  {obj: project2, elem: dom.printProjectToSidebar(project2)}
 ]
 
-let testProject = {
-  title: "new project",
-  todos: todos,
-}
-const proj = project(testProject)
-console.log(proj)
-
-function toggleNotes() {
-  let notes = dom.$('.todo-notes')
-  dom.toggleAttr(notes, "data-note-active")
-}  
-document.getElementById("1").addEventListener('click', toggleNotes)
+projects.forEach(proj => {
+  proj["elem"].addEventListener('click', () => {
+    dom.clearFocus()
+    dom.printProjectToFocus(proj["obj"])
+    toggleSidebar()
+  })
+})
