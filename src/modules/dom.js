@@ -54,13 +54,13 @@ export const DOM = () => {
 
   const returnInfoFromProjectForm = () => {
     return {
-      title: $('#projectTitle').value
+      projectTitle: $('#projectTitle').value
     }
   }
 
   const returnInfoFromTodoForm = () => {
     return {
-      title: $('#todoForm').value,
+      todoTitle: $('#todoTitle').value,
       description: $('#todoDesc').value,
       dueDate: $('#dueDate').value,
       priority: $('#todoPriority').value,
@@ -106,8 +106,8 @@ export const DOM = () => {
     const formContainer = createWith('div', {class: 'todo-form'})
     const header = create("h2")
     const todoContainer = createWith('div', {class: 'title-info'})
-    const todoLabel = createWith('label', {for: 'todoForm', class: 'todo-label'})
-    const todoInput = createWith('input', {type: 'text', id: 'todoForm', class: 'todo-input', placeholder: 'I need to make a sandwich...'})
+    const todoLabel = createWith('label', {for: 'todoTitle', class: 'todo-label'})
+    const todoInput = createWith('input', {type: 'text', id: 'todoTitle', class: 'todo-input', placeholder: 'I need to make a sandwich...'})
     const descContainer = createWith('div', {class: 'desc-info'})
     const descLabel = createWith('label', {for: 'todoDesc', class: 'todo-label'})
     const descInput = createWith('input', {type: 'text', id: 'todoDesc', class: 'todo-input', placeholder: 'It will be a peanut butter & jelly sandwich.'})
@@ -161,6 +161,10 @@ export const DOM = () => {
 
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
+  }
+
+  const printTodo = todo => {
+
   }
 
   return {
