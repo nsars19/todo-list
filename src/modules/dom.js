@@ -127,7 +127,43 @@ export const DOM = () => {
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
   }
+
+  const clearForm = form => {
+    form.value = ""
+  }
+
+  const clearChildForms = elem => {
+    elem.childNodes.forEach(child => {
+      if (child.nodeName === 'DIV') {
+        if (child.childNodes.length > 1) {
+          clearChildForms(child)
+        }
+      }
+      if (child.nodeName == 'INPUT') {
+        clearForm(child)
+      }
+    })
+  }
+
+  const returnInfoFromProjectForm = () => {
+    return {
+      title: $('#projectTitle').value
+    }
+  }
+
+  const returnInfoFromTodoForm = () => {
+    return {
+      title: $('#todoForm').value,
+      description: $('#todoDesc').value,
+      dueDate: $('#dueDate').value,
+      priority: $('#todoPriority').value,
+    }
+  }
+
   return {
+    clearChildForms,
+    returnInfoFromTodoForm,
+    returnInfoFromProjectForm,
     createProjectForm,
     createTodoForm,
     hide,
