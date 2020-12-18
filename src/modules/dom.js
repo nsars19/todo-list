@@ -43,8 +43,8 @@ export const DOM = () => {
     const projNameLabel = createWith('label', {for: 'projectTitle', class: 'project-label'})
     const projNameForm = createWith('input', {type: 'text', class: 'project-title', id: 'projectTitle', name: 'Project: '})
     const btnContainer = createWith('div', {class: 'btn-container'})
-    const submitButton = createWith('button', {class: 'btn btn-submit'})
-    const cancelButton = createWith('button', {class: 'btn btn-cancel'})
+    const submitButton = createWith('button', {class: 'btn project-submit'})
+    const cancelButton = createWith('button', {class: 'btn project-cancel'})
 
     setText(header, "Create a new project")
     setText(projNameLabel, "Project Title")
@@ -86,8 +86,8 @@ export const DOM = () => {
     const dueDateLabel = createWith('label', {for: 'dueDate', class: 'todo-label'})
     const dueDate = createWith('input', {id: 'dueDate', class: 'todo-form', type: 'date', value: startOfToday(), min: startOfToday()})
     const btnContainer = createWith('div', {class: 'btn-container'})
-    const submitButton = createWith('button', {class: 'btn btn-submit'})
-    const cancelButton = createWith('button', {class: 'btn btn-cancel'})
+    const submitButton = createWith('button', {class: 'btn todo-submit'})
+    const cancelButton = createWith('button', {class: 'btn todo-cancel'})
 
     setText(header, "Create a new todo")
     setText(todoLabel, "Todo")
