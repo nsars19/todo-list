@@ -70,7 +70,7 @@ export const DOM = () => {
     const body = $('body')
     const formContainer = createWith('div', {class: 'todo-form-container'})
     const header = create("h2")
-    const todoContainer = createWith('div', {class: 'todo-name-info'})
+    const todoContainer = createWith('div', {class: 'title-info'})
     const todoLabel = createWith('label', {for: 'todoForm', class: 'todo-label'})
     const todoInput = createWith('input', {type: 'text', id: 'todoForm', class: 'todo-form', placeholder: 'I need to make a sandwich...'})
     const descContainer = createWith('div', {class: 'desc-info'})
