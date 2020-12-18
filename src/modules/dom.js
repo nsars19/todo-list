@@ -11,7 +11,7 @@ export const DOM = () => {
     }
     return elem
   }
-  const addAttr = (elem, attr) => elem.addAttribute(attr)
+  const addAttr = (elem, attr, value) => elem.setAttribute(attr, value)
 
   const toggleAttr = (elem, attr) => {
     elem.getAttribute(attr) == "true" ? elem.setAttribute(attr, false) : elem.setAttribute(attr, true)
