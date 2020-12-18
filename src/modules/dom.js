@@ -93,6 +93,7 @@ export const DOM = () => {
     setText(lowPri, "Low")
     setText(medPri, "Medium")
     setText(highPri, "High")
+    setText(dueDateLabel, "Due Date")
     setText(submitButton, "Submit")
     setText(cancelButton, "Cancel")
 
