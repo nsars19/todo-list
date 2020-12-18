@@ -35,6 +35,41 @@ export const DOM = () => {
   const hide = elem => elem.style.display = 'none'
   const show = elem => elem.style.display = ''
 
+  const clearForm = form => {
+    form.value = ""
+  }
+
+  const clearChildForms = elem => {
+    elem.childNodes.forEach(child => {
+      if (child.nodeName === 'DIV') {
+        if (child.childNodes.length > 1) {
+          clearChildForms(child)
+        }
+      }
+      if (child.nodeName == 'INPUT') {
+        clearForm(child)
+      }
+    })
+  }
+
+  const returnInfoFromProjectForm = () => {
+    return {
+      title: $('#projectTitle').value
+    }
+  }
+
+  const returnInfoFromTodoForm = () => {
+    return {
+      title: $('#todoForm').value,
+      description: $('#todoDesc').value,
+      dueDate: $('#dueDate').value,
+      priority: $('#todoPriority').value,
+    }
+  }
+
+  const showProjectForm = () => show($('.project-form'))
+  const showTodoForm = () => show($('.todo-form-container'))
+
   const createProjectForm = () => {
     const body = $('body')
     const formContainer = createWith('div', {class: "project-form"})
@@ -127,41 +162,6 @@ export const DOM = () => {
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
   }
-
-  const clearForm = form => {
-    form.value = ""
-  }
-
-  const clearChildForms = elem => {
-    elem.childNodes.forEach(child => {
-      if (child.nodeName === 'DIV') {
-        if (child.childNodes.length > 1) {
-          clearChildForms(child)
-        }
-      }
-      if (child.nodeName == 'INPUT') {
-        clearForm(child)
-      }
-    })
-  }
-
-  const returnInfoFromProjectForm = () => {
-    return {
-      title: $('#projectTitle').value
-    }
-  }
-
-  const returnInfoFromTodoForm = () => {
-    return {
-      title: $('#todoForm').value,
-      description: $('#todoDesc').value,
-      dueDate: $('#dueDate').value,
-      priority: $('#todoPriority').value,
-    }
-  }
-
-  const showProjectForm = () => show($('.project-form'))
-  const showTodoForm = () => show($('.todo-form-container'))
 
   return {
     showProjectForm,
