@@ -30,8 +30,92 @@ export const DOM = () => {
     }
   }
   const setText = (elem, text) => elem.innerText = text
+  const hide = elem => elem.style.display = 'none'
+  const show = elem => elem.style.display = ''
 
+  const createProjectForm = () => {
+    const body = $('body')
+    const formContainer = createWith('div', {class: "project-form"})
+    const header = create("h2")
+    const inputContainer = createWith('div', {class: 'form-wrapper'})
+    const projNameLabel = createWith('label', {for: 'projectName', class: 'project-label'})
+    const projNameForm = createWith('input', {type: 'text', class: 'project-name', id: 'projectName', name: 'Project: '})
+    const btnContainer = createWith('div', {class: 'btn-container'})
+    const submitButton = createWith('button', {class: 'btn btn-submit'})
+    const cancelButton = createWith('button', {class: 'btn btn-cancel'})
+
+    setText(header, "Create a new project")
+    setText(projNameLabel, "Project Title")
+    setText(submitButton, "Submit")
+    setText(cancelButton, "Cancel")
+
+    const layout = [
+      [body, formContainer],
+      [formContainer, header],
+      [formContainer, inputContainer],
+      [inputContainer, projNameLabel],
+      [inputContainer, projNameForm],
+      [formContainer, btnContainer],
+      [btnContainer, submitButton],
+      [btnContainer, cancelButton],
+    ]
+    
+    layout.forEach(pair => append(pair[0], pair[1]))
+    hide(formContainer)
+  }
+
+  const createTodoForm = () => {
+    const body = $('body')
+    const formContainer = createWith('div', {class: 'todo-form-container'})
+    const header = create("h2")
+    const todoContainer = createWith('div', {class: 'todo-name-info'})
+    const todoLabel = createWith('label', {for: 'todoForm', class: 'todo-label'})
+    const todoInput = createWith('input', {type: 'text', id: 'todoForm', class: 'todo-form', placeholder: 'I need to do...'})
+    const priorityContainer = createWith('div', {class: 'priority-container'})
+    const priorityLabel = createWith('label', {for: 'todoPriority', class: 'todo-label'})
+    const prioritySelect = createWith('select', {name: 'priority', id: 'todoPriority'})
+    const lowPri = createWith('option', {value: 'low'})
+    const medPri = createWith('option', {value: 'medium'})
+    const highPri = createWith('option', {value: 'high'})
+    const btnContainer = createWith('div', {class: 'btn-container'})
+    const submitButton = createWith('button', {class: 'btn btn-submit'})
+    const cancelButton = createWith('button', {class: 'btn btn-cancel'})
+
+    setText(header, "Create a new todo")
+    setText(todoLabel, "Todo")
+    setText(priorityLabel, "Priority")
+    setText(prioritySelect, "Priority")
+    setText(lowPri, "Low")
+    setText(medPri, "Medium")
+    setText(highPri, "High")
+    setText(submitButton, "Submit")
+    setText(cancelButton, "Cancel")
+
+    const layout = [
+      [body, formContainer],
+      [formContainer, header],
+      [formContainer, todoContainer],
+      [todoContainer, todoLabel],
+      [todoContainer, todoInput],
+      [formContainer, priorityContainer],
+      [priorityContainer, priorityLabel],
+      [priorityContainer, prioritySelect],
+      [prioritySelect, lowPri],
+      [prioritySelect, medPri],
+      [prioritySelect, highPri],
+      [formContainer, btnContainer],
+      [btnContainer, submitButton],
+      [btnContainer, cancelButton],
+    ]
+
+    layout.forEach(pair => append(pair[0], pair[1]))
+    hide(formContainer)
+  }
   return {
+    createProjectForm,
+    createTodoForm,
+    hide,
+    show,
     $,
     create,
     addAttributes,
