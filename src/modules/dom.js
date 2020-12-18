@@ -91,6 +91,7 @@ export const DOM = () => {
 
     setText(header, "Create a new todo")
     setText(todoLabel, "Todo")
+    setText(descLabel, "Desription")
     setText(priorityLabel, "Priority")
     setText(prioritySelect, "Priority")
     setText(lowPri, "Low")
@@ -106,6 +107,9 @@ export const DOM = () => {
       [formContainer, todoContainer],
       [todoContainer, todoLabel],
       [todoContainer, todoInput],
+      [formContainer, descContainer],
+      [descContainer, descLabel],
+      [descContainer, descInput],
       [formContainer, priorityContainer],
       [priorityContainer, priorityLabel],
       [priorityContainer, prioritySelect],
