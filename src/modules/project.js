@@ -1,6 +1,6 @@
 export const project = (info) => {
   return {
-    projectTitle: info["title"] || "",
+    projectTitle: info["projectTitle"] || "",
     todos: info["todos"] || [],
   }
 }
