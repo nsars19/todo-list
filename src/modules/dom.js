@@ -162,12 +162,61 @@ export const DOM = () => {
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
   }
+  const clearFocusTitle = () => $('.focused-title').innerText = ""
+  const clearTodos = () => {
+    const todos = $('.todos')
+    while (todos.firstChild) {
+      todos.firstChild.remove()
+    }
+  }
+  const clearFocus = () => {
+    clearFocusTitle()
+    clearTodos()
+  }
 
-  const printTodo = todo => {
+  const printTodos = todos => {
+    clearTodos()
 
+    todos.forEach((todo, idx) => {
+      const todoContainer = $('.todos')
+      const newTodo = createWith('div', {class: 'todo'})
+      
+      append(todoContainer, newTodo)
+      addAttr(newTodo, 'id', idx)
+
+      for (let prop in todo) {
+        let element = createWith('h4', {class: `${prop}`})
+        setText(element, todo[prop])
+        append(newTodo, element)
+      }
+    })
+  }
+
+  const printProjectToSidebar = project => {
+    const projectContainer = $('.projects')
+    const newProject = createWith('div', {class: 'project'})
+    const title = createWith('h3', {class: 'project-title', id: `${project['projectTitle']}`})
+    
+    setText(title, project["projectTitle"])
+    append(projectContainer, newProject)
+    append(newProject, title)
+
+    return newProject
+  }
+
+  const printProjectToFocus = project => {
+    const focus = $('.focused-title')
+
+    setText(focus, project['projectTitle'])
+
+    printTodos(project["todos"])
   }
 
   return {
+    clearFocus,
+    printProjectToFocus,
+    printProjectToSidebar,
+    printTodos,
     showProjectForm,
     showTodoForm,
     clearChildForms,
