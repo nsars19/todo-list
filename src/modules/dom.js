@@ -68,14 +68,14 @@ export const DOM = () => {
 
   const createTodoForm = () => {
     const body = $('body')
-    const formContainer = createWith('div', {class: 'todo-form-container'})
+    const formContainer = createWith('div', {class: 'todo-form'})
     const header = create("h2")
     const todoContainer = createWith('div', {class: 'title-info'})
     const todoLabel = createWith('label', {for: 'todoForm', class: 'todo-label'})
-    const todoInput = createWith('input', {type: 'text', id: 'todoForm', class: 'todo-form', placeholder: 'I need to make a sandwich...'})
+    const todoInput = createWith('input', {type: 'text', id: 'todoForm', class: 'todo-input', placeholder: 'I need to make a sandwich...'})
     const descContainer = createWith('div', {class: 'desc-info'})
     const descLabel = createWith('label', {for: 'todoDesc', class: 'todo-label'})
-    const descInput = createWith('input', {type: 'text', id: 'todoDesc', class: 'todo-form', placeholder: 'It will be a peanut butter & jelly sandwich.'})
+    const descInput = createWith('input', {type: 'text', id: 'todoDesc', class: 'todo-input', placeholder: 'It will be a peanut butter & jelly sandwich.'})
     const priorityContainer = createWith('div', {class: 'priority-container'})
     const priorityLabel = createWith('label', {for: 'todoPriority', class: 'todo-label'})
     const prioritySelect = createWith('select', {name: 'priority', id: 'todoPriority'})
