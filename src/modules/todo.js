@@ -1,6 +1,6 @@
 export const todo = (info = null) => {
   return {
-    title: info["title"] || "",
+    todoTitle: info["title"] || "",
     description: info["description"] || "",
     dueDate: info["dueDate"] || "",
     priority: info["priority"] || "",
