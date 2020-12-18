@@ -141,7 +141,7 @@ header .nav-selected > * {
 .todo .title {
   font-size: 1.2em;
 }
-.todo .todo-notes {
+.todo .todo-desc {
   transition: all 0.1s ease;
 }
 
