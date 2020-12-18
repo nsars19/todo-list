@@ -74,7 +74,7 @@ export const DOM = () => {
     const priorityContainer = createWith('div', {class: 'priority-container'})
     const priorityLabel = createWith('label', {for: 'todoPriority', class: 'todo-label'})
     const prioritySelect = createWith('select', {name: 'priority', id: 'todoPriority'})
-    const lowPri = createWith('option', {value: 'low'})
+    const lowPri = createWith('option', {value: 'low', selected: "selected"})
     const medPri = createWith('option', {value: 'medium'})
     const highPri = createWith('option', {value: 'high'})
     const btnContainer = createWith('div', {class: 'btn-container'})
