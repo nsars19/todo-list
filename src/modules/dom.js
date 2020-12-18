@@ -1,3 +1,5 @@
+import startOfToday from 'date-fns/startOfToday'
+
 export const DOM = () => {
   const $ = (elem) => document.querySelector(elem)
 
@@ -77,6 +79,9 @@ export const DOM = () => {
     const lowPri = createWith('option', {value: 'low', selected: "selected"})
     const medPri = createWith('option', {value: 'medium'})
     const highPri = createWith('option', {value: 'high'})
+    const dueDateContainer = createWith('div', {class: 'duedate-container'})
+    const dueDateLabel = createWith('label', {for: 'dueDate', class: 'todo-label'})
+    const dueDate = createWith('input', {id: 'dueDate', class: 'todo-form', type: 'date', value: startOfToday(), min: startOfToday()})
     const btnContainer = createWith('div', {class: 'btn-container'})
     const submitButton = createWith('button', {class: 'btn btn-submit'})
     const cancelButton = createWith('button', {class: 'btn btn-cancel'})
