@@ -160,7 +160,12 @@ export const DOM = () => {
     }
   }
 
+  const showProjectForm = () => show($('.project-form'))
+  const showTodoForm = () => show($('.todo-form-container'))
+
   return {
+    showProjectForm,
+    showTodoForm,
     clearChildForms,
     returnInfoFromTodoForm,
     returnInfoFromProjectForm,
