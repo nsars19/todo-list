@@ -248,6 +248,10 @@ export const DOM = () => {
     printProjectToFocus(proj)
   }
   return {
+    changeViewOnSubmit,
+    toggleSidebarAndNav,
+    clearProjectForm,
+    id,
     removeElement,
     clearFocus,
     printProjectToFocus,
