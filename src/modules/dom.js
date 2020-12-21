@@ -26,6 +26,7 @@ export const DOM = () => {
   const removeClass = (elem, klass) => elem.classList.remove(klass)
   
   const append = (parent, child) => parent.appendChild(child)
+  const removeElement = elem => elem.remove()
   const removeChildren = node => {
     while (node.firstChild) {
       node.firstChild.remove()
@@ -224,6 +225,7 @@ export const DOM = () => {
   }
 
   return {
+    removeElement,
     clearFocus,
     printProjectToFocus,
     printProjectToSidebar,
