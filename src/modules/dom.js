@@ -162,6 +162,17 @@ export const DOM = () => {
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
   }
+
+  const createAndShowProjectForm = () => {
+    createProjectForm()
+    showProjectForm()
+  }
+
+  const createAndShowTodoForm = () => {
+    createTodoForm()
+    showTodoForm()
+  }
+
   const clearFocusTitle = () => $('.focused-title').innerText = ""
   const clearTodos = () => {
     const todos = $('.todos')
