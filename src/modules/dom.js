@@ -53,6 +53,7 @@ export const DOM = () => {
     })
   }
 
+  const clearProjectForm = () => clearForm($('#projectTitle'))
   const returnInfoFromProjectForm = () => {
     return {
       projectTitle: $('#projectTitle').value
