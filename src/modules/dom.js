@@ -227,6 +227,26 @@ export const DOM = () => {
     printTodos(project["todos"])
   }
 
+  function toggleNav() {
+    let nav = $('.nav')
+    nav.classList.length === 2 ? removeClass(nav, 'nav-selected') 
+                               : addClass(nav, 'nav-selected')
+  }
+  function toggleSidebar() {
+    let sidebar = $('.sidebar')
+    toggleAttr(sidebar, "data-sidebar-active")
+  }
+  function toggleSidebarAndNav() {
+    toggleNav()
+    toggleSidebar()
+  }
+
+  function changeViewOnSubmit(proj) {
+    clearFocus()
+    clearProjectForm()
+    hide($('.project-form'))
+    printProjectToFocus(proj)
+  }
   return {
     removeElement,
     clearFocus,
