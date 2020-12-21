@@ -190,6 +190,8 @@ export const DOM = () => {
   const printTodos = todos => {
     clearTodos()
 
+    if (todos.length == 0) return
+
     todos.forEach((todo, idx) => {
       const todoContainer = $('.todos')
       const newTodo = createWith('div', {class: 'todo'})
