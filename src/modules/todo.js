@@ -4,6 +4,5 @@ export const todo = (info = null) => {
     description: info["description"] || "",
     dueDate: info["dueDate"] || "",
     priority: info["priority"] || "",
-    notes: info["notes"] || [],
   }
 }
