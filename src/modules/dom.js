@@ -188,7 +188,7 @@ export const DOM = () => {
   }
 
   function hideTodoInfo(idx, todoElement) {
-    const infoContainer = createWith('div', {class: 'todo-info', 'data-todo-active': false})
+    const infoContainer = createWith('div', {class: 'todo-info', id: `todo-${idx}`, 'data-todo-active': false})
     const desc = $(`.description-${idx}`)
     const dueDate = $(`.dueDate-${idx}`)
     const priority = $(`.priority-${idx}`)
@@ -209,16 +209,27 @@ export const DOM = () => {
       const newTodo = createWith('div', {class: `todo todo-${idx}`})
       
       append(todoContainer, newTodo)
-      addAttr(newTodo, 'id', idx)
 
       for (let prop in todo) {
-        let element = createWith('h4', {class: `${prop} ${prop}-${idx}`})
+        let element = createWith('h4', {class: `${prop}`})
+        let header = createWith('h4', {class: `${prop}-${idx}`})
         setText(element, todo[prop])
-        append(newTodo, element)
+        setText(header, populateTodoInfoHeaders(prop))
+        append(newTodo, header)
+        append(header, element)
       }
 
       hideTodoInfo(idx, newTodo)
     })
+  }
+  function populateTodoInfoHeaders(prop) {
+    const titles = {
+      todoTitle: "",
+      description: "Description", 
+      dueDate: "Due", 
+      priority: "Priority",
+    }
+    return titles[prop]
   }
 
   const printProjectToSidebar = project => {
