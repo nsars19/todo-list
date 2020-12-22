@@ -187,6 +187,18 @@ export const DOM = () => {
     clearTodos()
   }
 
+  function hideTodoInfo(idx, todoElement) {
+    const infoContainer = createWith('div', {class: 'todo-info', 'data-todo-active': false})
+    const desc = $(`.description-${idx}`)
+    const dueDate = $(`.dueDate-${idx}`)
+    const priority = $(`.priority-${idx}`)
+
+    const elems = [desc, dueDate, priority]
+    elems.forEach(elem => append(infoContainer, elem))
+
+    append(todoElement, infoContainer)
+  }
+
   const printTodos = todos => {
     clearTodos()
 
@@ -194,16 +206,18 @@ export const DOM = () => {
 
     todos.forEach((todo, idx) => {
       const todoContainer = $('.todos')
-      const newTodo = createWith('div', {class: 'todo'})
+      const newTodo = createWith('div', {class: `todo todo-${idx}`})
       
       append(todoContainer, newTodo)
       addAttr(newTodo, 'id', idx)
 
       for (let prop in todo) {
-        let element = createWith('h4', {class: `${prop}`})
+        let element = createWith('h4', {class: `${prop} ${prop}-${idx}`})
         setText(element, todo[prop])
         append(newTodo, element)
       }
+
+      hideTodoInfo(idx, newTodo)
     })
   }
 
