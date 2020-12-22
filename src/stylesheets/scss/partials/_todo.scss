@@ -8,7 +8,7 @@
   }
 }
 
-[data-note-active="true"] {
+[data-todo-active="true"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@
     padding-left: 15px;
   }
 }
-[data-note-active="false"] {
+[data-todo-active="false"] {
   height: 0;
   width: 0;
   & > * { display: none;}

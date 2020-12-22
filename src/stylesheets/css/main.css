@@ -145,7 +145,7 @@ header .nav-selected > * {
   transition: all 0.1s ease;
 }
 
-[data-note-active=true] {
+[data-todo-active=true] {
   position: absolute;
   top: 0;
   left: 0;
@@ -156,16 +156,16 @@ header .nav-selected > * {
   z-index: 100;
   border-radius: 8px;
 }
-[data-note-active=true] > * {
+[data-todo-active=true] > * {
   padding: 8px;
   padding-left: 15px;
 }
 
-[data-note-active=false] {
+[data-todo-active=false] {
   height: 0;
   width: 0;
 }
-[data-note-active=false] > * {
+[data-todo-active=false] > * {
   display: none;
 }
 
