@@ -247,7 +247,15 @@ export const DOM = () => {
     hide($('.project-form'))
     printProjectToFocus(proj)
   }
+  function hideProjectForm() {
+    hide($('.project-form'))
+  }
+  function hideTodoForm() {
+    hide($('.todo-form'))
+  }
   return {
+    hideProjectForm,
+    hideTodoForm,
     changeViewOnSubmit,
     toggleSidebarAndNav,
     clearProjectForm,
