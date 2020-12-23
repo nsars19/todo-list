@@ -56,6 +56,16 @@ const app = (() => {
     elem.addEventListener('click', () => {
       setFocus(project)
       dom.toggleSidebarAndNav()
+      let todoElems = dom.printProjectToFocus(project)
+      if (!todoElems) return
+      attachClickListenerToProjectTodos(todoElems)
+    })
+  }
+  function attachClickListenerToProjectTodos(todoElems) {
+    todoElems.forEach(todo => {
+      todo.addEventListener('click', () => {
+        dom.toggleAttr(todo.lastChild, 'data-todo-active')
+      })
     })
   }
   // Adds a 'starter' list with some todos
