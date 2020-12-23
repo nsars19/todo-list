@@ -90,7 +90,7 @@ const app = (() => {
       project: defaultProject,
       elem: dom.printProjectToSidebar(defaultProject)
     }  
-
+    setFocus(defaultProject)
     dom.printProjectToFocus(projObj["project"])
     attachClickListenerToProject(projObj.project, projObj.elem)
   }
