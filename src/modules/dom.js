@@ -70,7 +70,7 @@ export const DOM = () => {
   }
 
   const showProjectForm = () => show($('.project-form'))
-  const showTodoForm = () => show($('.todo-form-container'))
+  const showTodoForm = () => show($('.todo-form'))
 
   const createProjectForm = () => {
     const body = $('body')
