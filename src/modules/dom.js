@@ -211,10 +211,10 @@ export const DOM = () => {
   }
 
   function createTodoElements(todos) {
-    let todoElements = []
+    const todoElements = []
+    const todoContainer = $('.todos')
 
     todos.forEach((todo, idx) => {
-      const todoContainer = $('.todos')
       const newTodo = createWith('div', {class: `todo todo-${idx}`})
       
       append(todoContainer, newTodo)
