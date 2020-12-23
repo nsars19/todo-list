@@ -125,7 +125,7 @@ export const DOM = () => {
     const highPri = createWith('option', {value: 'high'})
     const dueDateContainer = createWith('div', {class: 'duedate-container'})
     const dueDateLabel = createWith('label', {for: 'dueDate', class: 'todo-label'})
-    const dueDate = createWith('input', {id: 'dueDate', class: 'todo-form', type: 'date', value: startOfToday(), min: startOfToday()})
+    const dueDate = createWith('input', {id: 'dueDate', class: 'todo-date', type: 'date', value: startOfToday(), min: startOfToday()})
     const btnContainer = createWith('div', {class: 'btn-container'})
     const submitButton = createWith('button', {class: 'btn todo-submit'})
     const cancelButton = createWith('button', {class: 'btn todo-cancel'})
