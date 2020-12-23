@@ -1,31 +1,43 @@
 .todos {
   display: grid;
+  border-bottom: none;
+  margin-top: 20px;
+  max-width: 400px;
 
   .todo {
     padding-left: 8px;
-    position: relative;
-  
-    .title { font-size: 1.2em; }
-    .todo-desc {
-      transition: all 0.1s ease;
+    padding: 8px;
+    border: 1px solid #333;
+    border-bottom: none;
+    max-width: 400px;
+  }
+  .todo:last-child {
+    border-bottom: 1px solid #333;
+  }
+  .prop-header {
+    font-size: .87em;
+    
+    .todoTitle { 
+      font-size: 1.20em; 
     }
+  }
+
+  .description,
+  .dueDate,
+  .priority {
+    margin-top: 3px;
+    margin-left: 5px;
   }
 }
 
 [data-todo-active="true"] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 20vh;
-  min-width: 300px;
-  width: 70%;
-  background: #25252c;
-  z-index: 100;
-  border-radius: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: margin-top 0.3s, margin-bottom 0.2s;
 
   & > * {
     padding: 8px;
-    padding-left: 15px;
+    padding-left: 5px;
   }
 }
 [data-todo-active="false"] {
