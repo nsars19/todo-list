@@ -204,7 +204,10 @@ export const DOM = () => {
 
     if (todos.length == 0) return
 
-    return createTodoElements(todos)
+    let elems = createTodoElements(todos)
+    elems.forEach((elem, idx) => hideTodoInfo(idx, elem))
+
+    return elems
   }
 
   function createTodoElements(todos) {
@@ -226,7 +229,6 @@ export const DOM = () => {
       }
 
       todoElements.push(newTodo)
-      hideTodoInfo(idx, newTodo)
     })
 
     return todoElements
