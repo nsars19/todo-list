@@ -22,6 +22,11 @@ const app = (() => {
     eventHandler.subscribe(sub[0], sub[1])
   })
 
+  function setFocus(project) {
+    focusedProject = project
+  }
+  function getFocus() { return focusedProject }
+
   function _setProjectButtonListeners() {
     _projectSubmit()
     _projectCancel()
