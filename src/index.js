@@ -14,6 +14,7 @@ const app = (() => {
     ["startApp", dom.createProjectForm],
     ["startApp", _setProjectButtonListeners],
     ["startApp", _createDefaultList],
+    ["startApp", _setTodoListeners],
     ["newProject", dom.showProjectForm],
     ["newProject", dom.toggleSidebarAndNav],
   ]
