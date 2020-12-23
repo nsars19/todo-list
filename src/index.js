@@ -68,6 +68,29 @@ const app = (() => {
       })
     })
   }
+  function _setTodoListeners() {
+    _addListenerToMakeTodoButton()
+    _todoSubmit()
+    _todoCancel()
+  }
+  function _todoSubmit() {
+    dom.$('.todo-submit').addEventListener('click', () => {
+      let data = dom.returnInfoFromTodoForm()
+      let newTodo = todo(data)
+      getFocus().addTodo(newTodo)
+      let elems = dom.printProjectToFocus(getFocus())
+      attachClickListenerToProjectTodos([elems[elems.length - 1]])
+    })
+  }
+  function _todoCancel() {
+    dom.$('.todo-cancel').addEventListener('click', () => {
+      dom.hideTodoForm()
+      dom.clearTodoForm()
+    })
+  }
+  function _addListenerToMakeTodoButton() {
+    dom.$('.new-todo').addEventListener('click', dom.showTodoForm)
+  }
   // Adds a 'starter' list with some todos
   function _createDefaultList() {
     const defaultTodo = todo({
