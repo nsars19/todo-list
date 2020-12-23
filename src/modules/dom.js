@@ -204,6 +204,12 @@ export const DOM = () => {
 
     if (todos.length == 0) return
 
+    return createTodoElements(todos)
+  }
+
+  function createTodoElements(todos) {
+    let todoElements = []
+
     todos.forEach((todo, idx) => {
       const todoContainer = $('.todos')
       const newTodo = createWith('div', {class: `todo todo-${idx}`})
@@ -219,9 +225,13 @@ export const DOM = () => {
         append(header, element)
       }
 
+      todoElements.push(newTodo)
       hideTodoInfo(idx, newTodo)
     })
+
+    return todoElements
   }
+
   function populateTodoInfoHeaders(prop) {
     const titles = {
       todoTitle: "",
@@ -249,7 +259,7 @@ export const DOM = () => {
 
     setText(focus, project['projectTitle'])
 
-    printTodos(project["todos"])
+    return printTodos(project["todos"])
   }
 
   function toggleNav() {
