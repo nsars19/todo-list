@@ -122,4 +122,11 @@ const app = (() => {
   dom.$('.nav').addEventListener('click', dom.toggleSidebarAndNav)
   dom.id('createProject').addEventListener('click', eventHandler.publish.bind(this, "newProject"))
   eventHandler.publish("startApp")
+  
+  document.querySelectorAll('.todo').forEach(todo => {
+    let info = todo.lastChild
+    todo.addEventListener('click', () => {
+      dom.toggleAttr(info, 'data-todo-active')
+    })
+  })
 })()
