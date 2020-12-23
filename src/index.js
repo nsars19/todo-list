@@ -80,7 +80,8 @@ const app = (() => {
       let newTodo = todo(data)
       getFocus().addTodo(newTodo)
       let elems = dom.printProjectToFocus(getFocus())
-      attachClickListenerToProjectTodos([elems[elems.length - 1]])
+      attachClickListenerToProjectTodos(elems)
+      dom.hideTodoForm()
     })
   }
   function _todoCancel() {
