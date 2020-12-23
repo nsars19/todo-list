@@ -3,6 +3,7 @@ import startOfToday from 'date-fns/startOfToday'
 export const DOM = () => {
   const $ = (elem) => document.querySelector(elem)
   const id = elem => document.getElementById(elem)
+  const allInClass = elem => document.querySelectorAll(elem)
   const create = elem => document.createElement(elem)
 
   const addAttributes = (elem, attrs) => {
