@@ -35,6 +35,7 @@ const app = (() => {
     const btn = dom.$('.project-submit')
     btn.addEventListener('click', () => {
       let proj = _buildProject()
+      setFocus(proj)
       dom.changeViewOnSubmit(proj["project"])
       attachClickListenerToProject(proj["project"], proj["elem"])
     })
