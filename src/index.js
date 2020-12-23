@@ -54,7 +54,7 @@ const app = (() => {
   }
   function attachClickListenerToProject(project, elem) {
     elem.addEventListener('click', () => {
-      dom.printProjectToFocus(project)
+      setFocus(project)
       dom.toggleSidebarAndNav()
     })
   }
