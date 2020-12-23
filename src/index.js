@@ -4,6 +4,7 @@ import { pubsub, project, todo, DOM } from './modules'
 const app = (() => {
   const eventHandler = pubsub()
   const dom = DOM()
+  let focusedProject
   let projects = [], 
       todos    = [];
 
