@@ -227,7 +227,7 @@ export const DOM = () => {
 
       for (let prop in todo) {
         let element = createWith('h4', {class: `${prop}`})
-        let header = createWith('h4', {class: `prop-header ${prop}-${idx}`})
+        let header = createWith('h4', {class: `prop-header ${prop} ${prop}-${idx}`})
         setText(element, todo[prop])
         setText(header, populateTodoInfoHeaders(prop))
         append(newTodo, header)
