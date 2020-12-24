@@ -56,6 +56,8 @@ export const DOM = () => {
 
   const clearTodoForm = () => {
     allInClass('.todo-input').forEach(element => clearForm(element))
+    id("dueDate").value = ""
+    id("todoPriority").value = $("[selected='selected']").value
   }
   const clearProjectForm = () => clearForm($('#projectTitle'))
   const returnInfoFromProjectForm = () => {
