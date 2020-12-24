@@ -71,9 +71,27 @@ const app = (() => {
     })
   }
   function _setTodoListeners() {
-    _addListenerToMakeTodoButton()
     _todoSubmit()
     _todoCancel()
+  }
+  function _setControlListeners() {
+    _addListenerToMakeTodoButton()
+    _addListenerToCompleteAllTodos()
+    _addListenerToDeleteAllTodos()
+  }
+  function _addListenerToCompleteAllTodos() {
+    dom.$(".complete-all").addEventListener('click', dom.completeAllTodos)
+  }
+  function _addListenerToDeleteAllTodos() {
+    dom.$(".delete-all").addEventListener('click', () => {
+      if (getFocus().todos.length == 0) return
+      if (confirm("are you sure?")) {
+        getFocus().todos = []
+        dom.printProjectToFocus(getFocus())
+      } else {
+        return
+      }
+    })
   }
   function _todoSubmit() {
     dom.$('.todo-submit').addEventListener('click', () => {
