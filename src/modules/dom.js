@@ -193,6 +193,23 @@ export const DOM = () => {
     clearTodos()
   }
 
+  function appendTodoControls() {
+    let todos = allInClass('.todo')
+
+    todos.forEach(todo => {
+      const controls = createWith('div', {class: 'controls'})
+      const complete = createWith('div', {class: 'todo-complete'})
+      const remove = createWith('div', {class: 'todo-remove'})
+      
+      setText(complete, "✓")
+      setText(remove, "X")
+
+      append(controls, complete)
+      append(controls, remove)
+      append(todo, controls)
+    })
+  }
+
   function hideTodoInfo(idx, todoElement) {
     const infoContainer = createWith('div', {class: 'todo-info', id: `todo-${idx}`, 'data-todo-active': false})
     const desc = $(`.description-${idx}`)
@@ -211,6 +228,7 @@ export const DOM = () => {
     if (todos.length == 0) return
 
     let elems = createTodoElements(todos)
+    appendTodoControls()
     elems.forEach((elem, idx) => hideTodoInfo(idx, elem))
 
     return elems
