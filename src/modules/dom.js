@@ -101,8 +101,8 @@ export const DOM = () => {
       [inputContainer, projNameLabel],
       [inputContainer, projNameForm],
       [formContainer, btnContainer],
-      [btnContainer, submitButton],
       [btnContainer, cancelButton],
+      [btnContainer, submitButton],
     ]
     
     layout.forEach(pair => append(pair[0], pair[1]))
@@ -163,8 +163,8 @@ export const DOM = () => {
       [dueDateContainer, dueDateLabel],
       [dueDateContainer, dueDate],
       [formContainer, btnContainer],
-      [btnContainer, submitButton],
       [btnContainer, cancelButton],
+      [btnContainer, submitButton],
     ]
 
     layout.forEach(pair => append(pair[0], pair[1]))
