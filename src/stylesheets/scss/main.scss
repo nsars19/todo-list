@@ -23,6 +23,15 @@ body {
   position: relative;
 }
 
+.btn {
+  border: none;
+  background: #555;
+  height: 40px;
+  color: #eee;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
 .d-none {
   display: none;
 }
