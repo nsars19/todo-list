@@ -50,7 +50,12 @@ body {
     background: #b44;
   }
 }
-
+.btn-container {
+  margin-top: 15px;
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+}
 .d-none {
   display: none;
 }

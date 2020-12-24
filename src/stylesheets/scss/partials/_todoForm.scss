@@ -33,30 +33,6 @@
     font-size: 15px;
   }
 
-  .btn-container {
-    margin-top: 15px;
-    display: grid;
-    gap: 10px;
-    grid-auto-flow: column;
-  }
-  .todo-submit { 
-    background: #1a1;
-    &:hover {
-      background: #2b2;
-    }
-    &:active {
-      background: #3b3;
-    }
-  }
-  .todo-cancel { 
-    background: #a22;
-    &:hover {
-      background: #b33;
-    }
-    &:active {
-      background: #b44;
-    }
-  }
   & > * {
     display: grid;
     gap: 5px;
