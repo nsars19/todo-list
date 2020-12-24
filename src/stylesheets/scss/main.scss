@@ -30,6 +30,25 @@ body {
   color: #eee;
   border-radius: 8px;
   font-size: 17px;
+
+}
+[class$="-submit"] {
+  background: #1a1;
+  &:hover {
+    background: #2b2;
+  }
+  &:active {
+    background: #3b3;
+  }
+}
+[class$="-cancel"] {
+  background: #a22;
+  &:hover {
+    background: #b33;
+  }
+  &:active {
+    background: #b44;
+  }
 }
 
 .d-none {
