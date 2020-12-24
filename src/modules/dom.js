@@ -132,7 +132,7 @@ export const DOM = () => {
 
     setText(header, "Create a new todo")
     setText(todoLabel, "Todo")
-    setText(descLabel, "Desription")
+    setText(descLabel, "Description")
     setText(priorityLabel, "Priority")
     setText(prioritySelect, "Priority")
     setText(lowPri, "Low")
