@@ -10,6 +10,7 @@
     border: 1px solid #333;
     border-bottom: none;
     max-width: 400px;
+    position: relative;
   }
   .todo:last-child {
     border-bottom: 1px solid #333;
@@ -27,6 +28,35 @@
   .priority {
     margin-top: 3px;
     margin-left: 5px;
+  }
+
+
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 60px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 3px;
+  font-weight: bolder;
+  user-select: none;
+
+  .todo-complete {
+    font-size: 23px;
+    color: #1a1;
+
+    &:hover { color: #2b2;}
+  }
+  .todo-remove {
+    font-size: 21px;
+    color: #a22;
+
+    &:hover { color: #b33;}
   }
 }
 
