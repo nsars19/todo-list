@@ -21,11 +21,6 @@ body {
   color: #eee;
   background: rgb(28, 28, 34);
   position: relative;
-
-  & > * { z-index: 100; }
-  .todo-wrapper,
-  .project-wrapper { z-index: 1; }
- 
 }
 
 .d-none {
