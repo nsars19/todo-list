@@ -55,7 +55,7 @@ export const DOM = () => {
   }
 
   const clearTodoForm = () => {
-    allInClass('todo-input').forEach(element => clearForm(element))
+    allInClass('.todo-input').forEach(element => clearForm(element))
   }
   const clearProjectForm = () => clearForm($('#projectTitle'))
   const returnInfoFromProjectForm = () => {
