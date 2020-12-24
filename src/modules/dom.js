@@ -296,7 +296,11 @@ export const DOM = () => {
   function hideTodoForm() {
     hide($('.todo-form'))
   }
+  function completeAllTodos() {
+    allInClass(".todo").forEach(todo => addClass(todo, "completed"))
+  }
   return {
+    completeAllTodos,
     clearTodoForm,
     hideProjectForm,
     hideTodoForm,
