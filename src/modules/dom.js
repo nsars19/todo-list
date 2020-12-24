@@ -78,7 +78,6 @@ export const DOM = () => {
 
   const createProjectForm = () => {
     const body = $('body')
-    const containerWrapper = createWith('div', {class: 'project-wrapper'})
     const formContainer = createWith('div', {class: "project-form"})
     const header = create("h2")
     const inputContainer = createWith('div', {class: 'form-wrapper'})
@@ -94,8 +93,7 @@ export const DOM = () => {
     setText(cancelButton, "Cancel")
 
     const layout = [
-      [body, containerWrapper],
-      [containerWrapper, formContainer],
+      [body, formContainer],
       [formContainer, header],
       [formContainer, inputContainer],
       [inputContainer, projNameLabel],
@@ -111,7 +109,6 @@ export const DOM = () => {
 
   const createTodoForm = () => {
     const body = $('body')
-    const containerWrapper = createWith('div', {class: 'todo-wrapper'})
     const formContainer = createWith('div', {class: 'todo-form'})
     const header = create("h2")
     const todoContainer = createWith('div', {class: 'title-info'})
@@ -146,8 +143,7 @@ export const DOM = () => {
     setText(cancelButton, "Cancel")
 
     const layout = [
-      [body, containerWrapper],
-      [containerWrapper, formContainer],
+      [body, formContainer],
       [formContainer, header],
       [formContainer, todoContainer],
       [todoContainer, todoLabel],
