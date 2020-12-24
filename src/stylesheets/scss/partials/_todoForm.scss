@@ -1,0 +1,74 @@
+.todo-form {
+  position: fixed;
+  top: 120px;
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px #111;
+  background-color: #333333;
+  display: grid;
+  gap: 14px;
+  width: 500px;
+  z-index: 1000;
+  
+  input,
+  select {
+    min-width: 260px;
+    background: #484848;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+  }
+  input {
+    padding-left: 4px;
+  }
+  select {
+    appearance: none;
+  }
+  
+  .todo-label {
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .btn-container {
+    margin-top: 15px;
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+  }
+  .todo-submit { 
+    background: #1a1;
+    &:hover {
+      background: #2b2;
+    }
+    &:active {
+      background: #3b3;
+    }
+  }
+  .todo-cancel { 
+    background: #a22;
+    &:hover {
+      background: #b33;
+    }
+    &:active {
+      background: #b44;
+    }
+  }
+  & > * {
+    display: grid;
+    gap: 5px;
+  }
+  @media (min-width: 541px) and (max-width: 768px) { left: 8%;}
+  @media (max-width: 565px) { left: 5%}
+  @media (min-width: 805px) { left: 2%;}
+  @media (min-width: 915px) { left: 10%;}
+  @media (min-width: 1065px) { left: 20%;}
+  @media (min-width: 1215px) { left: 30%;}
+  @media (max-width: 540px) {
+    left: 10px;
+    width: calc(100% - 20px);
+  }
+}
