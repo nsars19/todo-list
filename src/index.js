@@ -82,6 +82,7 @@ const app = (() => {
       let elems = dom.printProjectToFocus(getFocus())
       attachClickListenerToProjectTodos(elems)
       dom.hideTodoForm()
+      dom.clearTodoForm()
     })
   }
   function _todoCancel() {
