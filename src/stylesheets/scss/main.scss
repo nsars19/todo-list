@@ -77,6 +77,12 @@ input {
 select {
   appearance: none;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: #444;
+}
+
 .d-none {
   display: none;
 }
