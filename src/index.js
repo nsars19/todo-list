@@ -24,15 +24,28 @@ const app = (() => {
     eventHandler.subscribe(sub[0], sub[1])
   })
 
+  function _setTodoListeners() {
+    _todoSubmit()
+    _todoCancel()
+  }
+  function _setControlListeners() {
+    _addListenerToMakeTodoButton()
+    _addListenerToCompleteAllTodos()
+    _addListenerToDeleteAllTodos()
+  }
+  function _setProjectButtonListeners() {
+    _projectSubmit()
+    _projectCancel()
+  }
+  function _attachTodoControlListeners(todo) {
+    _markTodoComplete(todo)
+    _removeTodo(todo)
+  }
   function setFocus(project) {
     focusedProject = project
   }
   function getFocus() { return focusedProject }
 
-  function _setProjectButtonListeners() {
-    _projectSubmit()
-    _projectCancel()
-  }
   function _projectSubmit() {
     const btn = dom.$('.project-submit')
     btn.addEventListener('click', () => {
@@ -61,24 +74,18 @@ const app = (() => {
       let todoElems = dom.printProjectToFocus(project)
       if (!todoElems) return
       attachClickListenerToProjectTodos(todoElems)
+      _attachTodoControlListeners(todoElems)
     })
   }
   function attachClickListenerToProjectTodos(todoElems) {
     todoElems.forEach(todo => {
-      todo.addEventListener('click', () => {
+      todo.firstChild.addEventListener('click', () => {
         dom.toggleAttr(todo.lastChild, 'data-todo-active')
       })
+      _attachTodoControlListeners(todo)
     })
   }
-  function _setTodoListeners() {
-    _todoSubmit()
-    _todoCancel()
-  }
-  function _setControlListeners() {
-    _addListenerToMakeTodoButton()
-    _addListenerToCompleteAllTodos()
-    _addListenerToDeleteAllTodos()
-  }
+
   function _addListenerToCompleteAllTodos() {
     dom.$(".complete-all").addEventListener('click', dom.completeAllTodos)
   }
@@ -113,6 +120,45 @@ const app = (() => {
   function _addListenerToMakeTodoButton() {
     dom.$('.new-todo').addEventListener('click', dom.showTodoForm)
   }
+  function _markTodoComplete(todo) {
+    if (!todo.children) return
+
+    todo.children[1].firstChild.addEventListener('click', () => {
+        todo.classList.toggle("completed") 
+    })
+  }
+  function _removeTodo(todo) {
+    if (!todo.children) return
+
+    let todoInfo = {
+      todoTitle: todo.firstChild.firstChild.innerText,
+      description: todo.lastChild.children[0].lastChild.innerText,
+      dueDate: todo.lastChild.children[1].lastChild.innerText,
+      priority: todo.lastChild.children[2].lastChild.innerText,
+    }
+
+    todo.children[1].children[1].addEventListener('click', () => {      
+      let todoIdx = findTodoIndex(todoInfo, getFocus().todos)
+      getFocus().removeTodo(todoIdx)
+      todo.remove()
+    })
+  }
+  function findTodoIndex(info, todos) {
+    let foundIdx
+    todos.forEach((todo, idx) => {
+      if (isSameInfo(info, todo)) {
+        foundIdx = idx
+      }
+    })
+    return foundIdx
+  }
+  function isSameInfo(info, todo) {
+      todo.todoTitle   == info.todoTitle   && 
+      todo.description == info.description &&
+      todo.dueDate     == info.dueDate     &&
+      todo.priority    == info.priority
+  }
+
   // Adds a 'starter' list with some todos
   function _createDefaultList() {
     const defaultTodo = todo({
@@ -145,9 +191,9 @@ const app = (() => {
   eventHandler.publish("startApp")
   
   document.querySelectorAll('.todo').forEach(todo => {
-    let info = todo.lastChild
-    todo.addEventListener('click', () => {
-      dom.toggleAttr(info, 'data-todo-active')
+    todo.firstChild.addEventListener('click', () => {
+      dom.toggleAttr(todo.lastChild, 'data-todo-active')
     })
+    _attachTodoControlListeners(todo)
   })
 })()
