@@ -27,7 +27,6 @@ export const DOM = () => {
   const removeClass = (elem, klass) => elem.classList.remove(klass)
   
   const append = (parent, child) => parent.appendChild(child)
-  const removeElement = elem => elem.remove()
   const removeChildren = node => {
     while (node.firstChild) {
       node.firstChild.remove()
@@ -169,16 +168,6 @@ export const DOM = () => {
 
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
-  }
-
-  const createAndShowProjectForm = () => {
-    createProjectForm()
-    showProjectForm()
-  }
-
-  const createAndShowTodoForm = () => {
-    createTodoForm()
-    showTodoForm()
   }
 
   const clearFocusTitle = () => $('.focused-title').innerText = ""
@@ -326,32 +315,16 @@ export const DOM = () => {
     toggleSidebarAndNav,
     clearProjectForm,
     id,
-    removeElement,
     clearFocus,
     printProjectToFocus,
     printProjectToSidebar,
     printTodos,
     createProjectForm,
     showProjectForm,
-    createAndShowProjectForm,
     createTodoForm,
     showTodoForm,
-    createAndShowTodoForm,
-    clearChildForms,
     returnInfoFromTodoForm,
     returnInfoFromProjectForm,
-    hide,
-    show,
     $,
-    create,
-    addAttributes,
-    addAttr,
-    toggleAttr,
-    createWith,
-    addClass,
-    removeClass,
-    append,
-    removeChildren,
-    setText,
   }
 }
