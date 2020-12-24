@@ -143,6 +143,7 @@ header .nav-selected > * {
   border: 1px solid #333;
   border-bottom: none;
   max-width: 400px;
+  position: relative;
 }
 .todos .todo:last-child {
   border-bottom: 1px solid #333;
@@ -158,6 +159,34 @@ header .nav-selected > * {
 .todos .priority {
   margin-top: 3px;
   margin-left: 5px;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 60px;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 3px;
+  font-weight: bolder;
+  user-select: none;
+}
+.controls .todo-complete {
+  font-size: 23px;
+  color: #1a1;
+}
+.controls .todo-complete:hover {
+  color: #2b2;
+}
+.controls .todo-remove {
+  font-size: 21px;
+  color: #a22;
+}
+.controls .todo-remove:hover {
+  color: #b33;
 }
 
 [data-todo-active=true] {
@@ -402,6 +431,11 @@ input {
 
 select {
   appearance: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #444;
 }
 
 .d-none {
