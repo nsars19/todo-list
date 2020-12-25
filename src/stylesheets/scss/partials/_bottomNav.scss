@@ -28,6 +28,12 @@
     }
   }
 
+  @media (min-width: 390px) and (max-width: 540px) {
+    overflow-x: hidden;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media (max-width: 768px) {  
     height: 50px;
 

@@ -250,6 +250,13 @@ header .nav-selected > * {
 .bottom-controls > *:active {
   background: #dbdbdb1a;
 }
+@media (min-width: 390px) and (max-width: 540px) {
+  .bottom-controls {
+    overflow-x: hidden;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media (max-width: 768px) {
   .bottom-controls {
     height: 50px;
