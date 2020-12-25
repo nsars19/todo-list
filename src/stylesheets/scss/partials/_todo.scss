@@ -35,15 +35,12 @@
     }
   }
 
-
   .description,
   .dueDate,
   .priority {
     margin-top: 3px;
     margin-left: 5px;
   }
-
-
 }
 
 .controls {
@@ -58,6 +55,7 @@
   gap: 3px;
   font-weight: bolder;
   user-select: none;
+  text-shadow: 1px 2px 1px black;
 
   .todo-complete {
     font-size: 23px;
