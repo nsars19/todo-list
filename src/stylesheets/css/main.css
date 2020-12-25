@@ -3,6 +3,7 @@
 header {
   user-select: none;
   background: #1d1e2f;
+  background: #23243d;
   padding: 10px 20px;
   font-size: 1.6em;
   display: grid;
@@ -223,6 +224,7 @@ header .nav-selected > * {
 .bottom-controls {
   position: fixed;
   background: #1d1e2f;
+  background: #23243d;
   bottom: 0;
   width: 100%;
   overflow-x: hidden;
