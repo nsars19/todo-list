@@ -19,10 +19,22 @@
     font-size: .87em;
     
     .todoTitle { 
+      max-width: 300px;
       font-size: 1.20em; 
       user-select: none;
     }
+    @media (max-width: 540px) {
+      .todoTitle {
+        max-width: 250px;
+      }
+    }
+    @media (max-width: 440px) {
+      .todoTitle {
+        max-width: 190px;
+      }
+    }
   }
+
 
   .description,
   .dueDate,
