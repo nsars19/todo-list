@@ -307,6 +307,7 @@ export const DOM = () => {
     allInClass(".todo").forEach(todo => addClass(todo, "completed"))
   }
   return {
+    toggleAttr,
     completeAllTodos,
     clearTodoForm,
     hideProjectForm,
