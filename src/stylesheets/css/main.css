@@ -153,6 +153,7 @@ header .nav-selected > * {
 }
 .todos .prop-header .todoTitle {
   font-size: 1.2em;
+  user-select: none;
 }
 .todos .description,
 .todos .dueDate,
