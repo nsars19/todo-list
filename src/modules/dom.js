@@ -322,6 +322,8 @@ export const DOM = () => {
     }
   }
   return {
+    populateTodoForm,
+    getTodoInnerText,
     toggleAttr,
     completeAllTodos,
     clearTodoForm,
