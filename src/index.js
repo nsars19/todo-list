@@ -130,12 +130,7 @@ const app = (() => {
   function _removeTodo(todo) {
     if (!todo.children) return
 
-    let todoInfo = {
-      todoTitle: todo.firstChild.firstChild.innerText,
-      description: todo.lastChild.children[0].lastChild.innerText,
-      dueDate: todo.lastChild.children[1].lastChild.innerText,
-      priority: todo.lastChild.children[2].lastChild.innerText,
-    }
+    let todoInfo = dom.getTodoInnerText(todo)
 
     todo.children[1].children[1].addEventListener('click', () => {      
       let todoIdx = findTodoIndex(todoInfo, getFocus().todos)
