@@ -170,6 +170,13 @@ export const DOM = () => {
     hide(formContainer)
   }
 
+  function populateTodoForm(info) {
+    id('todoTitle').value = info['todoTitle']
+    id('todoDesc').value = info['description']
+    id('todoPriority').value = info['priority']
+    id('dueDate').value = new Date(Date.parse(info['dueDate'])).toISOString().substr(0, 10)
+  }
+
   const clearFocusTitle = () => $('.focused-title').innerText = ""
   const clearTodos = () => {
     const todos = $('.todos')
