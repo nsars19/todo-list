@@ -153,10 +153,10 @@ const app = (() => {
     return foundIdx
   }
   function isSameInfo(info, todo) {
-      todo.todoTitle   == info.todoTitle   && 
-      todo.description == info.description &&
-      todo.dueDate     == info.dueDate     &&
-      todo.priority    == info.priority
+    return (todo.todoTitle   == info.todoTitle   && 
+    todo.description == info.description &&
+    todo.dueDate     == info.dueDate     &&
+    todo.priority    == info.priority)
   }
 
   // Adds a 'starter' list with some todos
