@@ -313,6 +313,14 @@ export const DOM = () => {
   function completeAllTodos() {
     allInClass(".todo").forEach(todo => addClass(todo, "completed"))
   }
+  function getTodoInnerText(todo) {
+    return {
+      todoTitle: todo.firstChild.firstChild.innerText,
+      description: todo.lastChild.children[0].lastChild.innerText,
+      dueDate: todo.lastChild.children[1].lastChild.innerText,
+      priority: todo.lastChild.children[2].lastChild.innerText,
+    }
+  }
   return {
     toggleAttr,
     completeAllTodos,
