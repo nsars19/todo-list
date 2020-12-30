@@ -60,19 +60,24 @@
   .todo-complete {
     font-size: 23px;
     color: #1a1;
+    transform: scale(1.2);
 
-    &:hover { color: #2b2;}
+    &:hover { color: #171;}
   }
   .todo-remove {
     font-size: 21px;
-    color: #a22;
+    color: #9d9d9d;
 
-    &:hover { color: #b33;}
+    &:hover { color: #716b6b;}
   }
 
   .todo-edit {
     margin-left: 13px;
     transform: rotate(90deg);
+
+    &:hover {
+      opacity: 60%;
+    }
   }
 }
 

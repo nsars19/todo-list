@@ -191,20 +191,24 @@ header .nav-selected > * {
 .controls .todo-complete {
   font-size: 23px;
   color: #1a1;
+  transform: scale(1.2);
 }
 .controls .todo-complete:hover {
-  color: #2b2;
+  color: #171;
 }
 .controls .todo-remove {
   font-size: 21px;
-  color: #a22;
+  color: #9d9d9d;
 }
 .controls .todo-remove:hover {
-  color: #b33;
+  color: #716b6b;
 }
 .controls .todo-edit {
   margin-left: 13px;
   transform: rotate(90deg);
+}
+.controls .todo-edit:hover {
+  opacity: 60%;
 }
 
 [data-todo-active=true] {
