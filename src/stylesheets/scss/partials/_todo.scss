@@ -46,7 +46,7 @@
 .controls {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -15px;
   height: 40px;
   width: 60px;
   display: grid;
@@ -68,6 +68,11 @@
     color: #a22;
 
     &:hover { color: #b33;}
+  }
+
+  .todo-edit {
+    margin-left: 13px;
+    transform: rotate(90deg);
   }
 }
 

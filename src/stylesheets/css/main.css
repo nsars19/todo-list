@@ -177,7 +177,7 @@ header .nav-selected > * {
 .controls {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -15px;
   height: 40px;
   width: 60px;
   display: grid;
@@ -201,6 +201,10 @@ header .nav-selected > * {
 }
 .controls .todo-remove:hover {
   color: #b33;
+}
+.controls .todo-edit {
+  margin-left: 13px;
+  transform: rotate(90deg);
 }
 
 [data-todo-active=true] {
@@ -401,6 +405,8 @@ body {
   color: #eee;
   border-radius: 8px;
   font-size: 17px;
+  display: grid;
+  place-items: center;
 }
 
 [class$=-submit] {
