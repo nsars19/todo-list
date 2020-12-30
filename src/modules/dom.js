@@ -130,6 +130,8 @@ export const DOM = () => {
     const btnContainer = createWith('div', {class: 'btn-container'})
     const submitButton = createWith('button', {class: 'btn todo-submit'})
     const cancelButton = createWith('button', {class: 'btn todo-cancel'})
+    const editButton = createWith('button', {class: 'btn todo-edit-submit d-none'})
+    const editCancel = createWith('button', {class: 'btn todo-edit-cancel d-none'})
 
     setText(header, "Create a new todo")
     setText(todoLabel, "Todo")
@@ -141,7 +143,9 @@ export const DOM = () => {
     setText(highPri, "High")
     setText(dueDateLabel, "Due Date")
     setText(submitButton, "Submit")
+    setText(editButton, "Submit")
     setText(cancelButton, "Cancel")
+    setText(editCancel, "Cancel")
 
     const layout = [
       [body, formContainer],
@@ -164,10 +168,30 @@ export const DOM = () => {
       [formContainer, btnContainer],
       [btnContainer, cancelButton],
       [btnContainer, submitButton],
+      [btnContainer, editCancel],
+      [btnContainer, editButton],
     ]
 
     layout.forEach(pair => append(pair[0], pair[1]))
     hide(formContainer)
+  }
+
+  function showEditForm() {
+    $('.todo-submit').classList.toggle('d-none')
+    $('.todo-edit-submit').classList.toggle('d-none')
+    $('.todo-cancel').classList.toggle('d-none')
+    $('.todo-edit-cancel').classList.toggle('d-none')
+
+    showTodoForm()
+  }
+
+  function hideEditForm() {
+    $('.todo-submit').classList.toggle('d-none')
+    $('.todo-edit-submit').classList.toggle('d-none')
+    $('.todo-cancel').classList.toggle('d-none')
+    $('.todo-edit-cancel').classList.toggle('d-none')
+
+    hideTodoForm()
   }
 
   function populateTodoForm(info) {
@@ -196,12 +220,15 @@ export const DOM = () => {
       const controls = createWith('div', {class: 'controls'})
       const complete = createWith('div', {class: 'todo-complete'})
       const remove = createWith('div', {class: 'todo-remove'})
-      
+      const edit = createWith('div', {class: 'todo-edit'})
+
+      setText(edit, "✏️")
       setText(complete, "✓")
       setText(remove, "X")
 
       append(controls, complete)
       append(controls, remove)
+      append(controls, edit)
       append(todo, controls)
     })
   }
@@ -322,6 +349,8 @@ export const DOM = () => {
     }
   }
   return {
+    hideEditForm,
+    showEditForm,
     populateTodoForm,
     getTodoInnerText,
     toggleAttr,
