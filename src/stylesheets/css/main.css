@@ -303,6 +303,11 @@ header .nav-selected > * {
     left: 5%;
   }
 }
+@media (min-width: 769px) {
+  .todo-form {
+    left: 2%;
+  }
+}
 @media (min-width: 805px) {
   .todo-form {
     left: 2%;
