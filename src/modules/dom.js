@@ -224,7 +224,7 @@ export const DOM = () => {
 
       setText(edit, "✏️")
       setText(complete, "✓")
-      setText(remove, "X")
+      setText(remove, "🗑")
 
       append(controls, complete)
       append(controls, remove)
