@@ -40,6 +40,7 @@ const app = (() => {
   function _attachTodoControlListeners(todo) {
     _markTodoComplete(todo)
     _removeTodo(todo)
+    _editTodo(todo)
   }
   function setFocus(project) {
     focusedProject = project
@@ -125,6 +126,32 @@ const app = (() => {
 
     todo.children[1].firstChild.addEventListener('click', () => {
         todo.classList.toggle("completed") 
+    })
+  }
+  function _editTodo(_todo) {
+    if (!_todo.children) return
+    
+    const edit = _todo.children[1].lastChild
+    
+    edit.addEventListener('click', () => {
+      const innerInfo = dom.getTodoInnerText(_todo)
+      const idx = findTodoIndex(innerInfo, getFocus().todos)
+
+      dom.showEditForm()
+      dom.populateTodoForm(innerInfo)
+
+      dom.$('.todo-edit-submit').onclick = () => {
+        let newTodo = todo(dom.returnInfoFromTodoForm())
+        getFocus().todos.splice(idx, 1, newTodo)
+
+        let elems = dom.printProjectToFocus(getFocus())
+        attachClickListenerToProjectTodos(elems)
+
+        dom.hideEditForm()
+        dom.clearTodoForm()
+      }
+      
+      dom.$('.todo-edit-cancel').onclick = dom.hideEditForm
     })
   }
   function _removeTodo(todo) {
