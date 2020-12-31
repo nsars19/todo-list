@@ -9,7 +9,11 @@ header {
   display: grid;
   align-items: center;
   grid-auto-flow: column;
-
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  
   .title h1 {
     font-family: 'Righteous', cursive;
   }
