@@ -86,7 +86,7 @@
 [data-todo-active="true"] {
   margin-top: 5px;
   margin-bottom: 5px;
-  transition: margin-top 0.07s ease-out, margin-bottom 0.05s 0.03s ease-out;
+  transition: margin-top 0.07s ease, margin-bottom 0.05s 0.03s ease;
 
   & > * {
     padding: 8px;
