@@ -139,6 +139,7 @@ header .nav-selected > * {
 .project-focused {
   display: grid;
   margin: 30px;
+  margin-bottom: 60px;
   width: 72.5%;
 }
 .project-focused .title {
@@ -171,6 +172,7 @@ header .nav-selected > * {
   max-width: 300px;
   font-size: 1.2em;
   user-select: none;
+  word-wrap: break-word;
 }
 @media (max-width: 540px) {
   .todos .prop-header .todoTitle {
