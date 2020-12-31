@@ -152,7 +152,11 @@ const app = (() => {
     if (!todo.children) return
 
     todo.children[1].lastChild.firstChild.addEventListener('click', () => {
-        todo.classList.toggle("completed") 
+        todo.firstChild.classList.toggle("completed")
+        todo.lastChild.childNodes.forEach(child => {
+          child.classList.toggle("completed")
+        })
+        todo.lastChild.lastChild.classList.remove("completed")
     })
   }
   function _editTodo(_todo) {
