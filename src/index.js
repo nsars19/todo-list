@@ -119,11 +119,19 @@ const app = (() => {
   function _attachWarningListener() {
     dom.$('.warning-btn').addEventListener('click', dom.hideWarning)
   }
-  
+
   function _todoSubmit() {
     dom.$('.todo-submit').addEventListener('click', () => {
       let data = dom.returnInfoFromTodoForm()
       let newTodo = todo(data)
+      // return if there is no project in focus to submit the todo to
+      if (!getFocus()) {
+        dom.hideTodoForm()
+        dom.showWarning()
+        _attachWarningListener()
+        return
+      }
+
       getFocus().addTodo(newTodo)
       let elems = dom.printProjectToFocus(getFocus())
       attachClickListenerToProjectTodos(elems)
