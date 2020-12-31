@@ -45,42 +45,34 @@
   }
 }
 
-.controls {
-  position: absolute;
-  top: 0;
-  right: -5px;
-  height: 40px;
-  width: 60px;
+.todo-info .controls {
+  text-decoration: none;
+  opacity: 100%;
+  font-weight: bold;
+  text-shadow: 1px 2px 0px #111;
+  padding: 0;
+  padding-top: 10px;
+  border-top: 1px solid #aaaaaa33;
+  margin-top: 10px;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
-  gap: 5px;
-  font-weight: bolder;
+  justify-content: space-around;
   user-select: none;
-  text-shadow: 1px 2px 1px black;
 
   .todo-complete {
-    font-size: 23px;
-    color: #1a1;
-    transform: scale(1.2);
-
-    &:hover { color: #171;}
+    text-decoration: none !important;
+    display: block;
+    &:hover { color: #aaa;}
+    &:active { color: #888;}
   }
   .todo-remove {
-    font-size: 21px;
-    color: #9d9d9d;
-
-    &:hover { color: #716b6b;}
-    &:active { color: #c44;}
+    &:hover { color: #a22;}
+    &:active { color: #b33;}
   }
 
   .todo-edit {
-    margin-left: 13px;
-    transform: rotate(90deg);
-
-    &:hover {
-      opacity: 60%;
-    }
+    &:hover { color: #aaa;}
+    &:active { color: #888;}
   }
 }
 

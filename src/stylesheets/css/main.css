@@ -203,44 +203,41 @@ header .nav-selected > * {
   margin-left: 5px;
 }
 
-.controls {
-  position: absolute;
-  top: 0;
-  right: -5px;
-  height: 40px;
-  width: 60px;
+.todo-info .controls {
+  text-decoration: none;
+  opacity: 100%;
+  font-weight: bold;
+  text-shadow: 1px 2px 0px #111;
+  padding: 0;
+  padding-top: 10px;
+  border-top: 1px solid #aaaaaa33;
+  margin-top: 10px;
   display: grid;
   grid-auto-flow: column;
-  align-items: center;
-  gap: 5px;
-  font-weight: bolder;
+  justify-content: space-around;
   user-select: none;
-  text-shadow: 1px 2px 1px black;
 }
-.controls .todo-complete {
-  font-size: 23px;
-  color: #1a1;
-  transform: scale(1.2);
+.todo-info .controls .todo-complete {
+  text-decoration: none !important;
+  display: block;
 }
-.controls .todo-complete:hover {
-  color: #171;
+.todo-info .controls .todo-complete:hover {
+  color: #aaa;
 }
-.controls .todo-remove {
-  font-size: 21px;
-  color: #9d9d9d;
+.todo-info .controls .todo-complete:active {
+  color: #888;
 }
-.controls .todo-remove:hover {
-  color: #716b6b;
+.todo-info .controls .todo-remove:hover {
+  color: #a22;
 }
-.controls .todo-remove:active {
-  color: #c44;
+.todo-info .controls .todo-remove:active {
+  color: #b33;
 }
-.controls .todo-edit {
-  margin-left: 13px;
-  transform: rotate(90deg);
+.todo-info .controls .todo-edit:hover {
+  color: #aaa;
 }
-.controls .todo-edit:hover {
-  opacity: 60%;
+.todo-info .controls .todo-edit:active {
+  color: #888;
 }
 
 [data-todo-active=true] {
@@ -466,6 +463,7 @@ div .warning-btn:active {
   padding: 0;
   margin: 0;
   font-family: "M PLUS Rounded 1c", Courier, sans-serif;
+  scrollbar-width: none;
 }
 
 body {
