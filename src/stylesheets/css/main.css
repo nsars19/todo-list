@@ -76,7 +76,7 @@ header .nav-selected > * {
 @media (max-width: 768px) {
   .sidebar {
     height: calc(100vh);
-    top: 61px;
+    top: 60px;
   }
 }
 .sidebar .new-project:hover,
