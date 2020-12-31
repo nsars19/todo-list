@@ -299,6 +299,7 @@ export const DOM = () => {
     setText(title, project["projectTitle"])
     append(projectContainer, newProject)
     append(newProject, title)
+    addControlsToProject(newProject)
 
     return newProject
   }
