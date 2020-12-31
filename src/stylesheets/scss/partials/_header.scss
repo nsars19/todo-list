@@ -31,7 +31,7 @@ header {
       place-items: center;
 
       & > * {
-        transition: all 0.4s ease;
+        transition: all 0.2s ease;
         height: 4px;
         width: 25px;
         border-radius: 20px;
@@ -48,7 +48,7 @@ header {
         transform: rotate(-0.125turn);
       }
       #bar2 {
-        opacity: 0%;
+        // opacity: 0%;
         transform: scale(0.0);
       }
       #bar3 {
