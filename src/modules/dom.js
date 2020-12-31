@@ -213,24 +213,20 @@ export const DOM = () => {
     clearTodos()
   }
 
-  function appendTodoControls() {
-    let todos = allInClass('.todo')
+  function appendTodoControls(todo) {
+    const controls = createWith('div', {class: 'controls'})
+    const complete = createWith('div', {class: 'todo-complete'})
+    const remove = createWith('div', {class: 'todo-remove'})
+    const edit = createWith('div', {class: 'todo-edit'})
 
-    todos.forEach(todo => {
-      const controls = createWith('div', {class: 'controls'})
-      const complete = createWith('div', {class: 'todo-complete'})
-      const remove = createWith('div', {class: 'todo-remove'})
-      const edit = createWith('div', {class: 'todo-edit'})
+    setText(edit, "edit")
+    setText(complete, "mark complete")
+    setText(remove, "delete")
 
-      setText(edit, "✏️")
-      setText(complete, "✓")
-      setText(remove, "🗑")
-
-      append(controls, complete)
-      append(controls, remove)
-      append(controls, edit)
-      append(todo, controls)
-    })
+    append(controls, complete)
+    append(controls, edit)
+    append(controls, remove)
+    append(todo, controls)
   }
 
   function hideTodoInfo(idx, todoElement) {
@@ -243,6 +239,7 @@ export const DOM = () => {
     elems.forEach(elem => append(infoContainer, elem))
 
     append(todoElement, infoContainer)
+    appendTodoControls(infoContainer)
   }
 
   const printTodos = todos => {
@@ -251,8 +248,8 @@ export const DOM = () => {
     if (todos.length == 0) return
 
     let elems = createTodoElements(todos)
-    appendTodoControls()
     elems.forEach((elem, idx) => hideTodoInfo(idx, elem))
+    // appendTodoControls()
 
     return elems
   }
