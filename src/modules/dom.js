@@ -321,7 +321,8 @@ export const DOM = () => {
   }
 
   function showWarning() {
-    const focus = $('.project-focused')
+    const focus = $('body')
+    const wrapper = createWith('div', {class: 'warning-wrapper'})
     const warningContainer = createWith('div', {class: 'warning'})
     const warningText = createWith('h3', {class: 'warning-text'})
     const warningSubmit = createWith('div', {class: 'warning-btn btn'})
@@ -330,7 +331,8 @@ export const DOM = () => {
     setText(warningSubmit, "Ok, I won't do it again.")
 
     const structure = [
-      [focus, warningContainer],
+      [focus, wrapper],
+      [wrapper, warningContainer],
       [warningContainer, warningText],
       [warningContainer, warningSubmit],
     ]
