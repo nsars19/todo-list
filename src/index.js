@@ -54,6 +54,7 @@ const app = (() => {
       setFocus(proj["project"])
       dom.changeViewOnSubmit(proj["project"])
       attachClickListenerToProject(proj["project"], proj["elem"])
+      attachClickListenerToDelete(proj["project"], proj["elem"])
     })
   }
   function _projectCancel() {
@@ -76,6 +77,20 @@ const app = (() => {
       if (!todoElems) return
       attachClickListenerToProjectTodos(todoElems)
       _attachTodoControlListeners(todoElems)
+    })
+  }
+  function attachClickListenerToDelete(project, elem) {
+    const deleteBtn = elem.lastChild
+    let idx = projects.findIndex(prj => prj["project"] == project)
+    
+    deleteBtn.addEventListener('click', () => {
+      projects.splice(idx, 1)
+      elem.remove()
+
+      if (getFocus() == project) {
+        dom.clearFocus()
+        setFocus(null)
+      }
     })
   }
   function attachClickListenerToProjectTodos(todoElems) {
@@ -150,7 +165,7 @@ const app = (() => {
         dom.hideEditForm()
         dom.clearTodoForm()
       }
-      
+
       dom.$('.todo-edit-cancel').onclick = dom.hideEditForm
     })
   }
