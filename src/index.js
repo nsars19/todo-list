@@ -151,14 +151,14 @@ const app = (() => {
   function _markTodoComplete(todo) {
     if (!todo.children) return
 
-    todo.children[1].firstChild.addEventListener('click', () => {
+    todo.children[1].lastChild.firstChild.addEventListener('click', () => {
         todo.classList.toggle("completed") 
     })
   }
   function _editTodo(_todo) {
     if (!_todo.children) return
-    
-    const edit = _todo.children[1].lastChild
+
+    const edit = _todo.children[1].lastChild.children[1]
     
     edit.addEventListener('click', () => {
       const innerInfo = dom.getTodoInnerText(_todo)
@@ -186,7 +186,7 @@ const app = (() => {
 
     let todoInfo = dom.getTodoInnerText(todo)
 
-    todo.children[1].children[1].addEventListener('click', () => {      
+    todo.children[1].lastChild.lastChild.addEventListener('click', () => {      
       let todoIdx = findTodoIndex(todoInfo, getFocus().todos)
       getFocus().removeTodo(todoIdx)
       todo.remove()
