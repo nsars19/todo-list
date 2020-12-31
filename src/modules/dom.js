@@ -320,6 +320,26 @@ export const DOM = () => {
     return printTodos(project["todos"])
   }
 
+  function showWarning() {
+    const focus = $('.project-focused')
+    const warningContainer = createWith('div', {class: 'warning'})
+    const warningText = createWith('h3', {class: 'warning-text'})
+    const warningSubmit = createWith('div', {class: 'warning-btn btn'})
+
+    setText(warningText, "There's no project to add this todo to!")
+    setText(warningSubmit, "Ok, I won't do it again.")
+
+    const structure = [
+      [focus, warningContainer],
+      [warningContainer, warningText],
+      [warningContainer, warningSubmit],
+    ]
+
+    structure.forEach(pair => append(pair[0], pair[1]))
+  }
+
+  function hideWarning() { $('.warning').remove() }
+
   function toggleNav() {
     let nav = $('.nav')
     nav.classList.length === 2 ? removeClass(nav, 'nav-selected') 
@@ -358,6 +378,8 @@ export const DOM = () => {
     }
   }
   return {
+    hideWarning,
+    showWarning,
     hideEditForm,
     showEditForm,
     populateTodoForm,
