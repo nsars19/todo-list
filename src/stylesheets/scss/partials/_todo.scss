@@ -86,15 +86,19 @@
 [data-todo-active="true"] {
   margin-top: 5px;
   margin-bottom: 5px;
-  transition: margin-top 0.07s ease, margin-bottom 0.05s 0.03s ease;
-
+  transition: opacity 0.4s ease, max-height 0.2s ease;
+  max-height: 250px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  
   & > * {
     padding: 8px;
     padding-left: 5px;
   }
 }
 [data-todo-active="false"] {
-  height: 0;
+  max-height: 0;
   width: 0;
-  & > * { display: none;}
+  overflow: hidden;
+  opacity: 0%;
 }
