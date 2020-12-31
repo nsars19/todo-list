@@ -69,7 +69,7 @@ const app = (() => {
     return projects[projects.push({project: proj, elem: elem}) - 1]
   }
   function attachClickListenerToProject(project, elem) {
-    elem.addEventListener('click', () => {
+    elem.firstChild.addEventListener('click', () => {
       setFocus(project)
       dom.toggleSidebarAndNav()
       let todoElems = dom.printProjectToFocus(project)
