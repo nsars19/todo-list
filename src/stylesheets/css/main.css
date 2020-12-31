@@ -144,6 +144,7 @@ header .nav-selected > * {
 
 .project-focused {
   display: grid;
+  padding-top: 20px;
   margin: 81px 30px 60px;
   width: 72.5%;
 }
@@ -417,6 +418,35 @@ header .nav-selected > * {
     left: 10px;
     width: calc(100% - 20px);
   }
+}
+
+.warning {
+  max-width: 425px;
+  padding: 13px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #333;
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+  z-index: 999;
+}
+.warning-text {
+  margin: 0px auto 0px;
+  text-align: center;
+}
+div .warning-btn {
+  margin-top: 25px;
+  width: 250px;
+  background: #1a1;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+div .warning-btn:hover {
+  background: #2b2;
+}
+div .warning-btn:active {
+  background: #3b3;
 }
 
 *,

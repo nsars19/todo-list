@@ -1,0 +1,31 @@
+.warning {
+  max-width: 425px;
+  padding: 13px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: #333;
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+  z-index: 999;
+
+  &-text {
+    margin: 0px auto 0px;
+    text-align: center;
+  }
+
+  div &-btn {
+    margin-top: 25px;
+    width: 250px;
+    background: #1a1;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    &:hover {
+      background: #2b2;
+    }
+    &:active {
+      background: #3b3;
+    }
+  }
+}
