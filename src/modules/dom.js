@@ -249,7 +249,6 @@ export const DOM = () => {
 
     let elems = createTodoElements(todos)
     elems.forEach((elem, idx) => hideTodoInfo(idx, elem))
-    // appendTodoControls()
 
     return elems
   }
