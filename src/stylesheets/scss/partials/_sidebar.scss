@@ -19,15 +19,17 @@
   .new-project,
   .projects > * {
     &:hover {
-      background: #dbdbdb1a
-    }
-
-    &:active {
       background: #dbdbdb1a;
-
-      .project-title,
-      h2 {
-        text-shadow: none;
+      .project-delete {
+        display: grid;
+        place-items: center;
+        font-size: 1.5em;
+        z-index: 999999;
+        
+        &:hover {
+          color: #c44;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -63,7 +65,20 @@
   text-shadow: 1px 1px 3px #000;
 
   .project {
-    padding: 10px 40px 10px 15px;
     position: relative;
+    display: grid;
+    grid-template-columns: 86% 14%;
+
+    &-delete { display: none;}
+
+    &:active {
+      background: #dbdbdb1a;
+    }
+  }
+  .project-title {
+    padding: 10px 10px 10px 15px;
+    &:active {
+      text-shadow: none;
+    }
   }
 }

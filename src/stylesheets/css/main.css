@@ -78,15 +78,17 @@ header .nav-selected > * {
 .sidebar .projects > *:hover {
   background: #dbdbdb1a;
 }
-.sidebar .new-project:active,
-.sidebar .projects > *:active {
-  background: #dbdbdb1a;
+.sidebar .new-project:hover .project-delete,
+.sidebar .projects > *:hover .project-delete {
+  display: grid;
+  place-items: center;
+  font-size: 1.5em;
+  z-index: 999999;
 }
-.sidebar .new-project:active .project-title,
-.sidebar .new-project:active h2,
-.sidebar .projects > *:active .project-title,
-.sidebar .projects > *:active h2 {
-  text-shadow: none;
+.sidebar .new-project:hover .project-delete:hover,
+.sidebar .projects > *:hover .project-delete:hover {
+  color: #c44;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -118,8 +120,21 @@ header .nav-selected > * {
   text-shadow: 1px 1px 3px #000;
 }
 .projects .project {
-  padding: 10px 40px 10px 15px;
   position: relative;
+  display: grid;
+  grid-template-columns: 86% 14%;
+}
+.projects .project-delete {
+  display: none;
+}
+.projects .project:active {
+  background: #dbdbdb1a;
+}
+.projects .project-title {
+  padding: 10px 10px 10px 15px;
+}
+.projects .project-title:active {
+  text-shadow: none;
 }
 
 .project-focused {
