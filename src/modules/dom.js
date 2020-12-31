@@ -304,6 +304,14 @@ export const DOM = () => {
     return newProject
   }
 
+  function addControlsToProject(project) {    
+    const controlWrap = createWith('div', {class: 'project-delete'})
+    const deleteProj = createWith('div', {class: 'delete-icon'})
+    setText(deleteProj, "🗑")
+    append(project, controlWrap)
+    append(controlWrap, deleteProj)
+  }
+
   const printProjectToFocus = project => {
     const focus = $('.focused-title')
 
