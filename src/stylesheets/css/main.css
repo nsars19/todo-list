@@ -152,6 +152,11 @@ header .nav-selected > * {
   padding-bottom: 20px;
   font-size: 2.1em;
 }
+@media (max-width: 768px) {
+  .project-focused {
+    margin-top: 61px;
+  }
+}
 
 .todos {
   display: grid;
