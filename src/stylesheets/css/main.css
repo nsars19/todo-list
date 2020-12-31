@@ -145,7 +145,7 @@ header .nav-selected > * {
 .project-focused {
   display: grid;
   padding-top: 20px;
-  margin: 81px 30px 60px;
+  margin: 81px 30px;
   width: 72.5%;
 }
 .project-focused .title {
@@ -155,6 +155,7 @@ header .nav-selected > * {
 @media (max-width: 768px) {
   .project-focused {
     margin-top: 61px;
+    margin-bottom: 61px;
   }
 }
 
