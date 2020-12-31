@@ -1,7 +1,11 @@
+.warning-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 0 15px;
+  
+}
 .warning {
-  max-width: 425px;
   padding: 13px;
-  margin: 0 auto;
   border-radius: 5px;
   background: #333;
   display: grid;
