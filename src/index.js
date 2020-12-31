@@ -116,6 +116,10 @@ const app = (() => {
       }
     })
   }
+  function _attachWarningListener() {
+    dom.$('.warning-btn').addEventListener('click', dom.hideWarning)
+  }
+  
   function _todoSubmit() {
     dom.$('.todo-submit').addEventListener('click', () => {
       let data = dom.returnInfoFromTodoForm()
