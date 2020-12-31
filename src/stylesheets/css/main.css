@@ -192,13 +192,13 @@ header .nav-selected > * {
 .controls {
   position: absolute;
   top: 0;
-  right: -15px;
+  right: -10px;
   height: 40px;
   width: 60px;
   display: grid;
   grid-auto-flow: column;
   align-items: center;
-  gap: 3px;
+  gap: 5px;
   font-weight: bolder;
   user-select: none;
   text-shadow: 1px 2px 1px black;
