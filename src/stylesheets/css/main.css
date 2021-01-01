@@ -69,7 +69,7 @@ header .nav-selected > * {
   border-left: 2px solid #333;
   background-color: #25252c;
   overflow-y: scroll;
-  overflow-x: hidden;
+  word-wrap: break-word;
   -webkit-user-select: none;
   -moz-user-select: none;
 }
@@ -148,9 +148,9 @@ header .nav-selected > * {
   margin: 81px 30px;
   width: 72.5%;
 }
-.project-focused .title {
-  padding-bottom: 20px;
+.project-focused .focused-title {
   font-size: 2.1em;
+  word-wrap: break-word;
 }
 @media (max-width: 768px) {
   .project-focused {
