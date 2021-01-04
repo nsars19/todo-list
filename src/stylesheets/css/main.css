@@ -327,6 +327,7 @@ header .nav-selected > * {
   gap: 14px;
   width: 500px;
   z-index: 1000;
+  transition: all 0.4s ease;
 }
 .todo-form > * {
   display: grid;
@@ -385,6 +386,7 @@ header .nav-selected > * {
   gap: 14px;
   width: 500px;
   z-index: 1000;
+  transition: all 0.4s ease;
 }
 .project-form > * {
   display: grid;
