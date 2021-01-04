@@ -263,12 +263,20 @@ export const DOM = () => {
       append(todoContainer, newTodo)
 
       for (let prop in todo) {
+        if (prop == 'completed') {
+          continue
+        }
+
         let element = createWith('h4', {class: `${prop}`})
         let header = createWith('h4', {class: `prop-header ${prop} ${prop}-${idx}`})
         setText(element, todo[prop])
         setText(header, populateTodoInfoHeaders(prop))
         append(newTodo, header)
         append(header, element)
+        
+        if (todo["completed"]) {
+          addClass(element, "completed")
+        }
       }
 
       todoElements.push(newTodo)
