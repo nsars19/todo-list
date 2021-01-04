@@ -286,7 +286,6 @@ export const DOM = () => {
 
   function addCompletedClassToTodoElements(todo) {
     todo.firstChild.classList.toggle("completed")
-    console.log(todo)
     todo.lastChild.childNodes.forEach(child => {
       child.classList.toggle("completed")
     })
