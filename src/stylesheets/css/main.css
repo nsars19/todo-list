@@ -149,7 +149,7 @@ header .nav-selected > * {
   width: 72.5%;
 }
 .project-focused .focused-title {
-  font-size: 2.1em;
+  font-size: 1.6em;
   word-break: break-word;
   max-width: 75%;
 }
