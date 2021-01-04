@@ -3,12 +3,16 @@
   padding-top: 20px;
   margin: 81px 30px;
   width: 72.5%;
-  .title {
-    padding-bottom: 20px;
+  .focused-title {
     font-size: 2.1em;
+    word-break: break-word;
+    max-width: 75%;
   }
   @media (max-width: 768px) {
     margin-top: 61px;
     margin-bottom: 61px;
+    .focused-title {
+      max-width: 100%;
+    }
   }
 }
