@@ -247,10 +247,7 @@ export const DOM = () => {
 
     if (todos.length == 0) return
 
-    let elems = createTodoElements(todos)
-    elems.forEach((elem, idx) => hideTodoInfo(idx, elem))
-
-    return elems
+    return createTodoElements(todos)
   }
 
   function createTodoElements(todos) {
@@ -285,6 +282,15 @@ export const DOM = () => {
     todoElements.forEach((elem, idx) => hideTodoInfo(idx, elem))
 
     return todoElements
+  }
+
+  function addCompletedClassToTodoElements(todo) {
+    todo.firstChild.classList.toggle("completed")
+    console.log(todo)
+    todo.lastChild.childNodes.forEach(child => {
+      child.classList.toggle("completed")
+    })
+    todo.lastChild.lastChild.classList.remove("completed")
   }
 
   function populateTodoInfoHeaders(prop) {
@@ -386,6 +392,7 @@ export const DOM = () => {
     }
   }
   return {
+    addCompletedClassToTodoElements,
     hideWarning,
     showWarning,
     hideEditForm,
