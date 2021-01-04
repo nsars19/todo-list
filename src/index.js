@@ -152,11 +152,10 @@ const app = (() => {
     if (!todo.children) return
 
     todo.children[1].lastChild.firstChild.addEventListener('click', () => {
-        todo.firstChild.classList.toggle("completed")
-        todo.lastChild.childNodes.forEach(child => {
-          child.classList.toggle("completed")
-        })
-        todo.lastChild.lastChild.classList.remove("completed")
+      dom.addCompletedClassToTodoElements(todo)
+      let todoInfo = dom.getTodoInnerText(todo)
+      let todoIdx = findTodoIndex(todoInfo, getFocus().todos)
+      getFocus().todos[todoIdx]["completed"] = true
     })
   }
   function _editTodo(_todo) {
