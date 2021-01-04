@@ -236,6 +236,7 @@ const app = (() => {
     setFocus(defaultProject)
     dom.printProjectToFocus(projObj["project"])
     attachClickListenerToProject(projObj.project, projObj.elem)
+    attachClickListenerToDelete(projObj.project, projObj.elem)
   }
 
   dom.$('.nav').addEventListener('click', dom.toggleSidebarAndNav)
