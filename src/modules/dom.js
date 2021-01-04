@@ -282,6 +282,8 @@ export const DOM = () => {
       todoElements.push(newTodo)
     })
 
+    todoElements.forEach((elem, idx) => hideTodoInfo(idx, elem))
+
     return todoElements
   }
 
