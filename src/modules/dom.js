@@ -272,7 +272,7 @@ export const DOM = () => {
         append(header, element)
         
         if (todo["completed"]) {
-          addClass(element, "completed")
+          addClass(header, "completed")
         }
       }
 
