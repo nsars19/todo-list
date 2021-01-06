@@ -382,6 +382,15 @@ export const DOM = () => {
   function completeAllTodos() {
     allInClass(".todo").forEach(todo => addCompletedClassToTodoElements(todo))
   }
+  function completeRemainingTodos() {
+    allInClass(".todo").forEach(todo => {
+      addClass(todo.firstChild, "completed")
+
+      let indeces = [0, 1, 2] // child indeces to mark complete
+      indeces.forEach(idx => addClass(todo.children[1].children[idx], "completed"))
+    })
+    
+  }
   function getTodoInnerText(todo) {
     return {
       todoTitle: todo.firstChild.firstChild.innerText,
@@ -399,6 +408,7 @@ export const DOM = () => {
     populateTodoForm,
     getTodoInnerText,
     toggleAttr,
+    completeRemainingTodos,
     completeAllTodos,
     clearTodoForm,
     hideProjectForm,
