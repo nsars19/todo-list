@@ -7,6 +7,6 @@ export const todo = (info = null) => {
     description: info["description"] || "It's self-explanatory!",
     dueDate:     info["dueDate"]     || lightFormat(startOfToday(), 'M/dd/y'),
     priority:    info["priority"]    || "None.",
-    completed:   false,
+    completed:   info["completed"]   || false,
   }
 }
