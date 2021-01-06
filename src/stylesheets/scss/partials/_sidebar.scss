@@ -12,7 +12,8 @@
   word-break: break-word;
   -webkit-user-select: none;
   -moz-user-select: none;
-  
+  transition: width 0.15s ease 0.05s;
+
   @media (max-width: 768px) {
     height: calc(100vh);
     top: 60px;
@@ -41,14 +42,22 @@
   [data-sidebar-active="true"] {
     width: 300px;
     background-color: rgb(37, 37, 44);
+    & > * {
+      transition: opacity 0.1s ease 0.13s
+    }
   }
   [data-sidebar-active="false"] {
-    display: none;
+    width: 0;
+    & > * {
+      opacity: 0;
+      transition: all 0.1s ease;
+    }
   }
 }
 @media (max-width: 400px) {
   [data-sidebar-active="true"] {
-    min-width: 100vw;
+    max-width: 100vw;
+    width: 100vw;
   }
 }
 
