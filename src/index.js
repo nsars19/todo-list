@@ -107,8 +107,11 @@ const app = (() => {
 
   function _addListenerToCompleteAllTodos() {
     dom.$(".complete-all").addEventListener('click', () => {
-      dom.completeAllTodos()
-      getFocus().todos.forEach(todo => todo.completed = todo.completed ? false : true)
+      if (!confirm("Are you sure?")) return
+
+      getFocus().todos.forEach(todo => todo.completed = true)
+      
+      dom.completeRemainingTodos()
     })
   }
   function _addListenerToDeleteAllTodos() {
