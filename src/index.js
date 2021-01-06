@@ -80,7 +80,6 @@ const app = (() => {
       let todoElems = dom.printProjectToFocus(project)
       if (!todoElems) return
       attachClickListenerToProjectTodos(todoElems)
-      _attachTodoControlListeners(todoElems)
     })
   }
   function attachClickListenerToDelete(project, elem) {
