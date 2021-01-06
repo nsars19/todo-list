@@ -1,7 +1,6 @@
 export const storage = () => {
   const storage = window.localStorage
-  const JSONObjectMatch = /,(?![^\{\[]*[\]\}])/g
-  storage.setItem("projectCount", 0)
+  const prefix = "project"
 
   // Basic access methods
   const read = key => storage.getItem(key)
@@ -10,8 +9,8 @@ export const storage = () => {
 
   // Complex access methods. Write objects to storage
   function writeProject(project) {
-    let count = getProjectCount()
-    write(`project${count++}`, JSON.stringify(project))
+    let count = getProjectCount() || 0
+    write(`${prefix}${count++}`, JSON.stringify(project))
     setProjectCount(count)
   }
 
@@ -20,14 +19,14 @@ export const storage = () => {
     const projects = []
 
     for (let i = 0; i < projectCount; i++) {
-      projects.push(JSON.parse(read(`project${i}`)))
+      projects.push(JSON.parse(read(`${prefix}${i}`)))
     }
     
     return projects
   }
 
-  function setProjectCount(i) { write("projectCount", i) }
-  function getProjectCount()  { return read("projectCount") }
+  function setProjectCount(i) { write(`${prefix}Count`, i) }
+  function getProjectCount()  { return read(`${prefix}Count`) }
 
   return {
     read,
