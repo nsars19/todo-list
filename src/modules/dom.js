@@ -380,7 +380,7 @@ export const DOM = () => {
     hide($('.todo-form'))
   }
   function completeAllTodos() {
-    allInClass(".todo").forEach(todo => addClass(todo, "completed"))
+    allInClass(".todo").forEach(todo => addCompletedClassToTodoElements(todo))
   }
   function getTodoInnerText(todo) {
     return {
