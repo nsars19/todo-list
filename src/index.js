@@ -161,7 +161,9 @@ const app = (() => {
       dom.addCompletedClassToTodoElements(todo)
       let todoInfo = dom.getTodoInnerText(todo)
       let todoIdx = findTodoIndex(todoInfo, getFocus().todos)
-      getFocus().todos[todoIdx]["completed"] = true
+
+      let todoObj = getFocus().todos[todoIdx]
+      todoObj.completed = todoObj.completed ? false : true 
     })
   }
   function _editTodo(_todo) {
