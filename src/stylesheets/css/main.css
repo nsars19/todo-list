@@ -336,7 +336,9 @@ header .nav-selected > * {
   gap: 14px;
   width: 500px;
   z-index: 1000;
-  transition: all 0.4s ease;
+  transition-property: height, width, padding, gap, top;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
 }
 .todo-form > * {
   display: grid;
@@ -379,8 +381,17 @@ header .nav-selected > * {
 }
 @media (max-width: 540px) {
   .todo-form {
+    top: 75px;
     left: 10px;
     width: calc(100% - 20px);
+  }
+}
+@media (max-width: 900px) and (max-height: 420px) {
+  .todo-form {
+    top: 10px;
+    z-index: 9999;
+    gap: 0px;
+    padding-top: 10px;
   }
 }
 
