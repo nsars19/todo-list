@@ -1,9 +1,10 @@
 import "./stylesheets/css/main.css"
-import { pubsub, project, todo, DOM } from './modules'
+import { pubsub, project, todo, DOM, storage } from './modules'
 
 const app = (() => {
   const eventHandler = pubsub()
   const dom = DOM()
+  const store = storage()
   let focusedProject
   let projects = [], 
       todos    = [];
@@ -16,6 +17,8 @@ const app = (() => {
     ["startApp", _createDefaultList],
     ["startApp", _setControlListeners],
     ["startApp", _setTodoListeners],
+    ["startApp", _loadSavedProjectsFromStorage],
+    ["startApp", _saveOnPageClose],
     ["newProject", dom.showProjectForm],
     ["newProject", dom.toggleSidebarAndNav],
   ]
@@ -55,6 +58,7 @@ const app = (() => {
       dom.changeViewOnSubmit(proj["project"])
       attachClickListenerToProject(proj["project"], proj["elem"])
       attachClickListenerToDelete(proj["project"], proj["elem"])
+      _saveProjectToStorage(proj["project"])
     })
   }
   function _projectCancel() {
@@ -209,6 +213,41 @@ const app = (() => {
     todo.description == info.description &&
     todo.dueDate     == info.dueDate     &&
     todo.priority    == info.priority)
+  }
+
+  function _loadSavedProjectsFromStorage() {
+    const loadedProjects = store.loadProjects()
+    loadedProjects.forEach(_project => {
+      const newProject = project(_project)
+
+      newProject.todos = _project.todos.map(_todo => todo(_todo))
+
+      let projObj = projects[projects.push({
+        project: newProject,
+        elem: dom.printProjectToSidebar(newProject)
+      }) - 1]
+
+      attachClickListenerToProject(projObj.project, projObj.elem)
+      attachClickListenerToDelete(projObj.project, projObj.elem)
+    })
+  }
+
+  function _saveProjectToStorage(project) {
+    store.writeProject(project)
+  }
+
+  function _saveOnPageClose() {
+    window.onbeforeunload = updateProjectSaveData
+  }
+
+  function updateProjectSaveData() {
+    // Set count back to 0 for overwriting project data
+    // prevents duplicate save data
+    store.setProjectCount(0)
+    
+    projects.forEach(_project => _saveProjectToStorage(_project.project))
+
+    return null
   }
 
   // Adds a 'starter' list with some todos
