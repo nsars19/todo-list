@@ -259,6 +259,7 @@ const app = (() => {
       description: "add a description to each todo.",
       dueDate: "12/25/2020",
       priority: "high",
+      completed: true,
     })
     const defaultTodo2 = todo({
       todoTitle: "Delete the first todo",
