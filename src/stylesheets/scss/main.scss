@@ -7,7 +7,7 @@
 @use './partials/projectForm';
 @use './partials/warningForm';
 
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800;900&display=swap");
 
 *,
 ::before,
@@ -15,7 +15,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'M PLUS Rounded 1c', Courier, sans-serif;
+  font-family: "M PLUS Rounded 1c", Courier, sans-serif;
   scrollbar-width: none;
 }
 
@@ -34,7 +34,6 @@ body {
   font-size: 17px;
   display: grid;
   place-items: center;
-
 }
 [class$="-submit"] {
   background: #1a1;

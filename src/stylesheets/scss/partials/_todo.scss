@@ -18,10 +18,10 @@
     border-bottom: 1px solid #333;
   }
   .prop-header {
-    font-size: .87em;
-    
-    .todoTitle { 
-      font-size: 1.20em; 
+    font-size: 0.87em;
+
+    .todoTitle {
+      font-size: 1.2em;
       user-select: none;
       word-wrap: break-word;
     }
@@ -62,17 +62,29 @@
   .todo-complete {
     text-decoration: none !important;
     display: block;
-    &:hover { color: #aaa;}
-    &:active { color: #888;}
+    &:hover {
+      color: #aaa;
+    }
+    &:active {
+      color: #888;
+    }
   }
   .todo-remove {
-    &:hover { color: #a22;}
-    &:active { color: #b33;}
+    &:hover {
+      color: #a22;
+    }
+    &:active {
+      color: #b33;
+    }
   }
 
   .todo-edit {
-    &:hover { color: #aaa;}
-    &:active { color: #888;}
+    &:hover {
+      color: #aaa;
+    }
+    &:active {
+      color: #888;
+    }
   }
 }
 
@@ -83,7 +95,7 @@
   max-height: 250px;
   overflow-y: scroll;
   scrollbar-width: none;
-  
+
   & > * {
     padding: 8px;
     padding-left: 5px;
